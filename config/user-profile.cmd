@@ -26,6 +26,7 @@ set "PATH=%CMDER_ROOT%\bin\custom;%PATH%"
 set "PATH=%CMDER_ROOT%\bin\busybox;%PATH%"
 set "PATH=%CMDER_ROOT%\bin\android;%PATH%"
 set "PATH=%CMDER_ROOT%\bin\systools;%PATH%"
+set "PATH=%CMDER_ROOT%\bin;%PATH%"
 
 set "PATH=%CMDER_ROOT%\vendor\cygwin\usr\x86_64-pc-cygwin\bin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\usr\sbin;%PATH%"
