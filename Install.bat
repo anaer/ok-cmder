@@ -77,7 +77,8 @@ set INSTALL_DIR=%~dp0\src-install
 -P git -P git-completion -P git-gui -P gitk ^
 -P python -P python3 ^
 -P inetutils ^
--P curl
+-P curl ^
+-P patch
 
 rd /s /q %INSTALL_DIR%\tmp
 
