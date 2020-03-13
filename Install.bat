@@ -85,6 +85,8 @@ set INSTALL_DIR=%~dp0\src-install
 rd /s /q %INSTALL_DIR%\tmp
 
 copy %CMDER_ROOT%\config\vimrc.orig %CMDER_ROOT%\vendor\cygwin\etc\vimrc
+copy %CMDER_ROOT%\config\taglist_46\plugin\taglist.vim %CMDER_ROOT%\vendor\cygwin\usr\share\vim\vim81\plugin\taglist.vim
+copy %CMDER_ROOT%\config\taglist_46\doc\taglist.txt %CMDER_ROOT%\vendor\cygwin\usr\share\vim\vim81\doc\taglist.txt
 
 echo "Success to install..."
 
