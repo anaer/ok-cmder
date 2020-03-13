@@ -37,7 +37,7 @@ del a.txt
 :: if "%tip%"=="n" goto nogitconfig
 :: :: if "%tip%"=="Y" set tip=y
 :: :: if "%tip%"=="y" goto gitconfig
-:: :: 
+:: ::
 :: :: :gitconfig
 :: set option=null
 :: set /p option="Please input user name: "
@@ -48,13 +48,13 @@ del a.txt
 :: if not "%option%"=="null" (
 :: 	%gitcmd% config --local user.email %option%
 :: )
-:: 
+::
 :: %gitcmd% config --local alias.st status
 :: %gitcmd% config --local alias.co checkout
 :: %gitcmd% config --local alias.ci commit
 :: %gitcmd% config --local alias.br branch
 :: %gitcmd% config --local alias.df diff
-:: 
+::
 :: echo "Success to configure git conig..."
 :: :nogitconfig
 
@@ -75,6 +75,8 @@ set INSTALL_DIR=%~dp0\src-install
 -P cmake ^
 -P vim ^
 -P git -P git-completion -P git-gui -P gitk ^
+-P cscope ^
+-P ctags ^
 -P python -P python3 ^
 -P inetutils ^
 -P curl ^
