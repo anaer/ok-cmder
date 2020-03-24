@@ -5,6 +5,8 @@ Cmder是windows环境下非常好用的一款终端工具。
 ### 安装方法
 1. 双击 Install.bat 或 在 Cmder 命令行中运行 .\Install.bat 命令来安装 cygwin  
 2. 直接打开 ok-cmder 目录下的 cmder.exe 可运行cmder终端程序  
+3. 将Cmder加入右键菜单的方法：Win+r后输入cmd，在cmd终端中运行命令
+    > Cmder.exe /REGISTER ALL
 
 ### 注意
 1. 解决 cmder 中文显示乱码的问题：  
