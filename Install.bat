@@ -64,17 +64,17 @@ set /p tip="if the first install, recommend to install cygwin?[y/n]: "
 if "%tip%"=="N" set tip=n
 if "%tip%"=="n" goto configend
 
-set INSTALL_DIR=%~dp0\src-install
+set INSTALL_DIR=%~dp0src-install
 
 :: Install cygwin command packages
-:: %INSTALL_DIR%\setup-x86_64.exe -q -n -s http://mirrors.163.com/cygwin/ -R D:\ok-cmder\vendor\git-for-windows\cygwin
+:: %INSTALL_DIR%\setup-x86_64.exe -q -n -s https://mirrors.tuna.tsinghua.edu.cn/cygwin/ -R D:\ok-cmder\vendor\git-for-windows\cygwin
 
 :: Install gcc compiler
-%INSTALL_DIR%\setup-x86_64.exe -q -n -W -s http://mirrors.163.com/cygwin/ --root %~dp0\vendor\cygwin -l %INSTALL_DIR%\tmp ^
+%INSTALL_DIR%\setup-x86_64.exe -q -n -W -s https://mirrors.tuna.tsinghua.edu.cn/cygwin/ --root %~dp0vendor\cygwin -l %INSTALL_DIR%\tmp ^
 -P gcc-core -P gcc-g++ -P make -p gdb -P binutils ^
 -P cmake ^
 -P vim ^
--P git -P git-completion -P git-gui -P gitk ^
+-P git ^
 -P cscope ^
 -P ctags ^
 -P python -P python3 ^
@@ -85,8 +85,8 @@ set INSTALL_DIR=%~dp0\src-install
 rd /s /q %INSTALL_DIR%\tmp
 
 copy %CMDER_ROOT%\config\vimrc.orig %CMDER_ROOT%\vendor\cygwin\etc\vimrc
-copy %CMDER_ROOT%\config\taglist_46\plugin\taglist.vim %CMDER_ROOT%\vendor\cygwin\usr\share\vim\vim81\plugin\taglist.vim
-copy %CMDER_ROOT%\config\taglist_46\doc\taglist.txt %CMDER_ROOT%\vendor\cygwin\usr\share\vim\vim81\doc\taglist.txt
+copy %CMDER_ROOT%\config\taglist_46\plugin\taglist.vim %CMDER_ROOT%\vendor\cygwin\usr\share\vim\vim82\plugin\taglist.vim
+copy %CMDER_ROOT%\config\taglist_46\doc\taglist.txt %CMDER_ROOT%\vendor\cygwin\usr\share\vim\vim82\doc\taglist.txt
 
 echo "Success to install..."
 
