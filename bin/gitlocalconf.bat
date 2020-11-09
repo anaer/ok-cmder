@@ -15,6 +15,6 @@ if not "%option%"=="null" (
 
 %gitcmd% config --local alias.st status
 %gitcmd% config --local alias.co checkout
-%gitcmd% config --local alias.ci commit
+%gitcmd% config --local alias.cm commit
 %gitcmd% config --local alias.br branch
 %gitcmd% config --local alias.df diff
