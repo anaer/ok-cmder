@@ -70,7 +70,7 @@ set INSTALL_DIR=%~dp0src-install
 :: %INSTALL_DIR%\setup-x86_64.exe -q -n -s https://mirrors.tuna.tsinghua.edu.cn/cygwin/ -R D:\ok-cmder\vendor\git-for-windows\cygwin
 
 :: Install gcc compiler
-%INSTALL_DIR%\setup-x86_64.exe -q -n -W -s https://mirrors.tuna.tsinghua.edu.cn/cygwin/ --root %~dp0vendor\cygwin -l %INSTALL_DIR%\tmp ^
+%INSTALL_DIR%\setup-x86_64.exe -q -n -W -s http://mirrors.163.com/cygwin/ --root %~dp0vendor\cygwin -l %INSTALL_DIR%\tmp ^
 -P gcc-core -P gcc-g++ -P make -p gdb -P binutils ^
 -P cmake ^
 -P vim ^
