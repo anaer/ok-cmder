@@ -11,6 +11,10 @@ Cmder是windows环境下非常好用的一款终端工具。
 ### 注意
 1. 解决 cmder 中文显示乱码的问题：  
     Settings –> Startup –> Environment，添加：set LANG=zh_CN.UTF8
+    
+2. 如果之前使用ssh访问的GitHub, 需要将密钥信息复制到当前目录下
+   将`C:\Users\Administrator\.ssh`目录复制到`D:\GitHub\ok-cmder\vendor\cygwin\home\Administrator\.ssh`
+   `chmod 600 /home/Administrator/.ssh/id_rsa`
   
 ### 命令集成
 1. 集成了 adb 和 fastboot 命令  
@@ -51,6 +55,4 @@ Cmder是windows环境下非常好用的一款终端工具。
     关于 ctags 和 cscope 的相关命令，可自行搜索，这类资料很多。  
   
 ### 最后
-1. 以上都是个人在工作中的一些总结，并不完善和全面，所以欢迎指正，欢迎提出建议。  
-2. 有意见可联系：  
-    邮箱：jathefo@126.com
+1. 基于fork项目, 然后根据自己的使用情况进行修改.
