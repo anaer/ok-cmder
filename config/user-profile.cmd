@@ -32,3 +32,8 @@ set "PATH=%CMDER_ROOT%\vendor\cygwin\usr\x86_64-pc-cygwin\bin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\usr\sbin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\sbin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%PATH%"
+
+:: 添加自定义环境变量
+set "PATH=D:\SingleWare;%PATH%"
+
+
