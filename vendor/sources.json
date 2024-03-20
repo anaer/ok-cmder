@@ -11,12 +11,12 @@
     },
     {
         "name": "conemu-maximus5",
-        "version": "180528",
-        "url": "https://github.com/Maximus5/ConEmu/releases/download/v18.05.28/ConEmuPack.180528.7z"
+        "version": "v23.07.24",
+        "url": "https://github.com/Maximus5/ConEmu/releases/download/v23.07.24/ConEmuPack.230724.7z"
     },
     {
         "name": "clink-completions",
-        "version": "0.3.3",
-        "url": "https://github.com/vladimir-kotikov/clink-completions/archive/0.3.3.zip"
+        "version": "0.5.1",
+        "url": "https://github.com/vladimir-kotikov/clink-completions/archive/0.5.1.zip"
     }
 ]
