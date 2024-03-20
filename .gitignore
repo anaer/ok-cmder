@@ -4,3 +4,5 @@
 .vscode/
 config/.history
 vendor/cygwin/
+cscope.*
+tags
