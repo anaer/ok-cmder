@@ -34,6 +34,6 @@ set "PATH=%CMDER_ROOT%\vendor\cygwin\sbin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%PATH%"
 
 :: 添加自定义环境变量
-set "PATH=D:\SingleWare;%PATH%"
+set "PATH=D:\SingleWare;C:\Users\Administrator\AppData\Roaming\npm;%PATH%"
 
 
