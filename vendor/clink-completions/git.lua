@@ -77,9 +77,11 @@ else
 end
 
 local function has_dot_dirs(token)
-    for _, t in ipairs(string.explode(token, '/\\')) do
-        if t == '.' or t == '..' then
-            return true
+    if string.explode then
+        for _, t in ipairs(string.explode(token, '/|\\')) do
+            if t == '.' or t == '..' then
+                return true
+            end
         end
     end
 end
