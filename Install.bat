@@ -73,13 +73,11 @@ set INSTALL_DIR=%~dp0src-install
 %INSTALL_DIR%\setup-x86_64.exe -q -n -W -s http://mirrors.aliyun.com/cygwin/ --root %~dp0vendor\cygwin -l %INSTALL_DIR%\tmp ^
 -P gcc-core -P gcc-g++ -P make -p gdb -P binutils ^
 -P cmake ^
--P vim ^
--P git ^
--P cscope ^
--P ctags ^
+-P vim -P git ^
+-P cscope -P ctags ^
 -P python -P python3 ^
--P inetutils ^
--P curl ^
+-P inetutils -P gawk ^
+-P curl -P jq ^
 -P patch
 
 rd /s /q %INSTALL_DIR%\tmp

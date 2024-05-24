@@ -6,3 +6,6 @@ config/.history
 vendor/cygwin/
 cscope.*
 tags
+tmp/
+*.log
+*.log.full

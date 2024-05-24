@@ -20,3 +20,4 @@ open=explorer.exe $*
 start=explorer.exe $*
 
 pwsh=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -Command "Invoke-Expression '. ''%CMDER_ROOT%/vendor/profile.ps1'''"
+awk=gawk $*  
