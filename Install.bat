@@ -86,6 +86,9 @@ copy %CMDER_ROOT%\config\vimrc.orig %CMDER_ROOT%\vendor\cygwin\etc\vimrc
 copy %CMDER_ROOT%\config\taglist_46\plugin\taglist.vim %CMDER_ROOT%\vendor\cygwin\usr\share\vim\vim82\plugin\taglist.vim
 copy %CMDER_ROOT%\config\taglist_46\doc\taglist.txt %CMDER_ROOT%\vendor\cygwin\usr\share\vim\vim82\doc\taglist.txt
 
+@REM 创建clink软链接
+mklink /D "%CMDER_ROOT%\vendor\conemu-maximus5\ConEmu\clink" "%CMDER_ROOT%\vendor\clink"
+
 echo "Success to install..."
 
 :configend
