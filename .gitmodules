@@ -1,0 +1,3 @@
+[submodule "vendor/clink-gizmos"]
+	path = vendor/clink-gizmos
+	url = https://github.com/chrisant996/clink-gizmos.git

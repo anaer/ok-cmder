@@ -57,6 +57,24 @@ Cmder是windows环境下非常好用的一款终端工具。
     
 5. 如果提示配置文件`^M`问题, 可能是用户目录存在vim配置文件格式不可识别, 简单点可以将对应目录文件进行删除
    `C:\Users\Administrator\.vim`和`C:\Users\Administrator\.vimrc`
+   
+### clink
+
+1. 查询clink 信息
+
+```
+clink info
+```
+
+2. 添加clink 脚本路径
+
+```
+clink installscripts D:\script_path
+```
+
+### clink-flex-prompt
+
+问答式设置prompt
   
 ### 最后
 1. 基于fork项目, 然后根据自己的使用情况进行修改.

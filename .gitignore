@@ -1,13 +1,15 @@
 # config/settings
 # config/user-ConEmu.xml
 # vendor/conemu-maximus5/ConEmu.xml
+*.log
+*.log.full
 .vscode/
 config/.history
-vendor/cygwin/
+config/.seen_tips
+config/clink*
+config/cwd_history
 cscope.*
 tags
 tmp/
-*.log
-*.log.full
-config/clink*
 vendor/conemu-maximus5/ConEmu/clink
+vendor/cygwin/
