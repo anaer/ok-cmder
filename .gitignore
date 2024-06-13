@@ -6,7 +6,8 @@
 .vscode/
 config/.history
 config/.seen_tips
-config/clink*
+config/clink_history*
+config/clink_errorlevel*
 config/cwd_history
 cscope.*
 tags
