@@ -23,5 +23,10 @@
         "name": "clink-flex-prompt",
         "version": "0.17",
         "url": "https://github.com/chrisant996/clink-flex-prompt/releases/download/v0.17/clink-flex-prompt-0.17.zip"
+    },
+    {
+        "name":"fzf",
+        "version": "0.53.0",
+        "url": "https://github.com/junegunn/fzf/releases/download/0.53.0/fzf-0.53.0-windows_amd64.zip"
     }
 ]

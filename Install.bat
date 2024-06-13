@@ -89,6 +89,12 @@ copy %CMDER_ROOT%\config\taglist_46\doc\taglist.txt %CMDER_ROOT%\vendor\cygwin\u
 @REM 创建clink软链接
 mklink /D "%CMDER_ROOT%\vendor\conemu-maximus5\ConEmu\clink" "%CMDER_ROOT%\vendor\clink"
 
+@REM 设置fzf.exe程序路径
+clink set fzf.exe_location %CMDER_ROOT%\bin\systools
+
+@REM clink set autosuggest.strategy fuzzy_history
+@REM clink set fishcomplete.enable true
+
 echo "Success to install..."
 
 :configend
