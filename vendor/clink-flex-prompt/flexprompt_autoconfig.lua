@@ -6,21 +6,27 @@
 flexprompt = flexprompt or {}
 flexprompt.settings = flexprompt.settings or {}
 flexprompt.settings.charset = "unicode"
-flexprompt.settings.connection = "disconnected"
-flexprompt.settings.heads = "pointed"
+flexprompt.settings.connection = "solid"
+flexprompt.settings.flow = "concise"
+flexprompt.settings.frame_color =
+{
+    "brightblack",
+    "brightblack",
+    "darkwhite",
+    "darkblack",
+}
+flexprompt.settings.heads = "flat"
 flexprompt.settings.left_frame = "none"
-flexprompt.settings.left_prompt = "{lbubble}"
+flexprompt.settings.left_prompt = "{battery:breakright}{histlabel}{cwd}{git}{exit}{duration}{time:dim:format=%a %H:%M}"
 flexprompt.settings.lines = "two"
 flexprompt.settings.nerdfonts_version = 3
 flexprompt.settings.nerdfonts_width = 2
-flexprompt.settings.powerline_font = true
-flexprompt.settings.right_frame = "none"
-flexprompt.settings.right_prompt = "{rbubble:format=%a %H:%M}"
+flexprompt.settings.right_frame = "round"
+flexprompt.settings.separators = "vertical"
 flexprompt.settings.spacing = "sparse"
-flexprompt.settings.style = "lean"
+flexprompt.settings.style = "rainbow"
 flexprompt.settings.symbols =
 {
     prompt = "❯",
 }
-flexprompt.settings.top_prompt = "{tbubble}"
-flexprompt.settings.use_8bit_color = true
+flexprompt.settings.tails = "flat"

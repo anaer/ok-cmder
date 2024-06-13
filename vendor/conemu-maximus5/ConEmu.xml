@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2024-06-13 15:35:47" build="230724">
+		<key name=".Vanilla" modified="2024-06-13 16:22:52" build="230724">
 			<value name="ColorTable00" type="dword" data="00362b00"/>
 			<value name="ColorTable01" type="dword" data="00423607"/>
 			<value name="ColorTable02" type="dword" data="00808000"/>
@@ -98,8 +98,8 @@
 			<value name="Multi.SplitWidth" type="hex" data="04"/>
 			<value name="Multi.SplitHeight" type="hex" data="04"/>
 			<value name="KeyboardHooks" type="hex" data="01"/>
-			<value name="FontName" type="string" data="Consolas"/>
-			<value name="FontName2" type="string" data="Lucida Console"/>
+			<value name="FontName" type="string" data="Maple Mono SC NF"/>
+			<value name="FontName2" type="string" data="Maple Mono SC NF"/>
 			<value name="FontAutoSize" type="hex" data="00"/>
 			<value name="FontSize" type="ulong" data="14"/>
 			<value name="FontSizeX" type="ulong" data="0"/>
@@ -124,11 +124,11 @@
 			<value name="ColorKeyValue" type="dword" data="00010101"/>
 			<value name="UseCurrentSizePos" type="hex" data="01"/>
 			<value name="WindowMode" type="dword" data="0000051f"/>
-			<value name="ConWnd Width" type="dword" data="00000078"/>
-			<value name="ConWnd Height" type="dword" data="0000001d"/>
+			<value name="ConWnd Width" type="dword" data="00000089"/>
+			<value name="ConWnd Height" type="dword" data="0000001b"/>
 			<value name="Cascaded" type="hex" data="01"/>
-			<value name="ConWnd X" type="long" data="566"/>
-			<value name="ConWnd Y" type="long" data="83"/>
+			<value name="ConWnd X" type="long" data="808"/>
+			<value name="ConWnd Y" type="long" data="138"/>
 			<value name="16bit Height" type="ulong" data="0"/>
 			<value name="AutoSaveSizePos" type="hex" data="01"/>
 			<value name="IntegralSize" type="hex" data="00"/>
