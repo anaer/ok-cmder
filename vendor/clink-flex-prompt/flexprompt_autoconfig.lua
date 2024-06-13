@@ -6,7 +6,7 @@
 flexprompt = flexprompt or {}
 flexprompt.settings = flexprompt.settings or {}
 flexprompt.settings.charset = "unicode"
-flexprompt.settings.connection = "solid"
+flexprompt.settings.connection = "disconnected"
 flexprompt.settings.flow = "concise"
 flexprompt.settings.frame_color =
 {
@@ -21,7 +21,7 @@ flexprompt.settings.left_prompt = "{battery:breakright}{histlabel}{cwd}{git}{exi
 flexprompt.settings.lines = "two"
 flexprompt.settings.nerdfonts_version = 3
 flexprompt.settings.nerdfonts_width = 2
-flexprompt.settings.right_frame = "round"
+flexprompt.settings.right_frame = "none"
 flexprompt.settings.separators = "vertical"
 flexprompt.settings.spacing = "sparse"
 flexprompt.settings.style = "rainbow"
