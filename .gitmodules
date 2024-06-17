@@ -1,3 +1,10 @@
 [submodule "vendor/clink-gizmos"]
 	path = vendor/clink-gizmos
 	url = https://github.com/chrisant996/clink-gizmos.git
+
+[submodule "vendor/clink-flex-prompt"]
+	path = vendor/clink-flex-prompt
+	url = https://github.com/chrisant996/clink-flex-prompt.git
+[submodule "vendor/clink-completions"]
+	path = vendor/clink-completions
+	url = https://github.com/vladimir-kotikov/clink-completions.git
