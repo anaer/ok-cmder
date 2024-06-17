@@ -72,9 +72,44 @@ clink info
 clink installscripts D:\script_path
 ```
 
+### clink-completions
+
+添加子模块
+
+```
+git submodule add --depth 1 https://github.com/vladimir-kotikov/clink-completions.git vendor/clink-completions
+```
+
 ### clink-flex-prompt
 
 问答式设置prompt
+
+添加子模块
+```
+git submodule add --depth 1 https://github.com/chrisant996/clink-flex-prompt.git vendor/clink-flex-prompt
+```
+
+启用sparse-checkout, 指定导出的文件列表
+```
+# 进入子模块目录
+cd vendor/clink-flex-prompt
+
+# 启用 sparse-checkout 功能
+git config core.sparseCheckout true
+
+# 创建 sparse-checkout 文件, 创建之后可以直接编辑sparse-checkout文件
+echo flexprompt.lua > ../../.git/modules/vendor/clink-flex-prompt/info/sparse-checkout
+
+内容:
+flexprompt.lua
+flexprompt_bubbles.lua
+flexprompt_modules.lua
+flexprompt_wizard.lua
+
+# 通过 git read-tree 更新工作区
+git read-tree -mu HEAD
+```
+
   
 ### 最后
 1. 基于fork项目, 然后根据自己的使用情况进行修改.
