@@ -37,3 +37,5 @@ set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%PATH%"
 set "PATH=D:\SingleWare;C:\Users\Administrator\AppData\Roaming\npm;%PATH%"
 
 
+:: 设置starship配置文件路径
+set "STARSHIP_CONFIG=%CMDER_ROOT%\config\starship.toml"

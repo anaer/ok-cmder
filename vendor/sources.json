@@ -38,5 +38,10 @@
     "name": "the_silver_searcher",
     "version": "2.2.0-58-g5a1c8d8",
     "url": "https://github.com/k-takata/the_silver_searcher-win32/releases/download/2020-07-05%2F2.2.0-58-g5a1c8d8/ag-2020-07-05_2.2.0-58-g5a1c8d8-x86.zip"
+  },
+  {
+    "name": "starship",
+    "version": "v1.19.0",
+    "url": "https://github.com/starship/starship/releases/download/v1.19.0/starship-x86_64-pc-windows-msvc.zip"
   }
 ]
