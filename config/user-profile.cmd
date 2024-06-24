@@ -39,3 +39,5 @@ set "PATH=D:\SingleWare;C:\Users\Administrator\AppData\Roaming\npm;%PATH%"
 
 :: 设置starship配置文件路径
 set "STARSHIP_CONFIG=%CMDER_ROOT%\config\starship.toml"
+:: 设置starship日志级别, 用于隐藏timeout的警告日志
+set "STARSHIP_LOG=error"
