@@ -235,3 +235,7 @@ terminal.raw_esc = False
 # type: boolean
 terminal.use_altgr_substitute = True
 
+# name: Show a tip when Clink starts
+# type: boolean
+tips.enable = False
+
