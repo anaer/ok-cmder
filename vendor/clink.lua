@@ -353,4 +353,4 @@ for _,lua_module in ipairs(clink.find_files(completions_dir..'*.lua')) do
 end
 
 -- 启用starship
-load(io.popen('starship init cmd'):read("*a"))()
+-- load(io.popen('starship init cmd'):read("*a"))()

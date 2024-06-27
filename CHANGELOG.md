@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 20240627
+
+1. 停用starship, 恢复使用flex-prompt
+
 ## 20240618
 
 1. 添加starship
