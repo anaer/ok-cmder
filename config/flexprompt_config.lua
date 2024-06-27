@@ -21,19 +21,27 @@ flexprompt.settings.heads = "round"
 flexprompt.settings.tails = "round"
 
 flexprompt.settings.left_frame = "none"
-flexprompt.settings.left_prompt = "{histlabel}{cwd}{git}{exit}{duration}{time:dim:format=%a %H:%M}"
 flexprompt.settings.lines = "two"
 flexprompt.settings.nerdfonts_version = 3
 flexprompt.settings.nerdfonts_width = 2
 flexprompt.settings.right_frame = "none"
+
+-- 左侧提示栏
+flexprompt.settings.left_prompt = "{histlabel}{cwd}{git}{exit}{duration}{time:dim:format=%a %H:%M}"
+-- 右侧提示栏
+flexprompt.settings.right_prompt = ""
+
 -- 分隔符形状 pointed: >
 flexprompt.settings.separators = "pointed"
 flexprompt.settings.spacing = "sparse"
 flexprompt.settings.style = "rainbow"
-flexprompt.settings.symbols =
-{
-    prompt = "❯",
-}
 
 flexprompt.settings.git_fetch_interval = 15
 flexprompt.settings.duration_threshold = 1
+
+-- 判断是否管理员
+local _,_,ret = os.execute("net session 1>nul 2>nul")
+local isAdmin = ret == 0
+
+-- 管理员: λ, 普通用户: ❯
+flexprompt.settings.symbols.prompt = isAdmin and "λ" or "❯"
