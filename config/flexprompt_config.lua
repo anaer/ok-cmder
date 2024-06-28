@@ -27,7 +27,7 @@ flexprompt.settings.nerdfonts_width = 2
 flexprompt.settings.right_frame = "none"
 
 -- 左侧提示栏
-flexprompt.settings.left_prompt = "{histlabel}{cwd:type=smart}{git}{exit}{duration}{time:dim:format=%a %H:%M}"
+flexprompt.settings.left_prompt = "{histlabel}{cwd:type=smart}{git:nountracked:counts}{exit}{duration}{time:dim:format=%a %H:%M}"
 -- 右侧提示栏
 flexprompt.settings.right_prompt = ""
 
@@ -42,7 +42,10 @@ flexprompt.settings.duration_threshold = 1
 flexprompt.settings.symbols =
 {
     prompt = "❯",
+    summarycount = { "*",    unicode="±" },
+    untrackedcount  = { "+" },
 }
+
 
 -- 判断是否管理员
 local _,_,ret = os.execute("net session 1>nul 2>nul")
