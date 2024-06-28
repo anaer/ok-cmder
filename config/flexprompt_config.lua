@@ -27,7 +27,7 @@ flexprompt.settings.nerdfonts_width = 2
 flexprompt.settings.right_frame = "none"
 
 -- 左侧提示栏
-flexprompt.settings.left_prompt = "{histlabel}{cwd:type=smart}{git:nountracked:counts}{exit}{duration}{time:dim:format=%a %H:%M}"
+flexprompt.settings.left_prompt = "{histlabel}{cwd:color=magenta:type=smart}{git:nountracked:counts}{exit}{duration}{time:dim:color=green:format=%a %H:%M}"
 -- 右侧提示栏
 flexprompt.settings.right_prompt = ""
 
