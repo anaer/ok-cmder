@@ -7,6 +7,11 @@ autosuggest.strategy = fuzzy_history
 # options: bash,windows
 clink.default_bindings = windows
 
+# name: Controls what startup logo to show
+# type: enum
+# options: none,full,short
+clink.logo = none
+
 # name: Strips CR and LF chars on paste
 # type: enum
 # options: delete,space,ampersand,crlf
@@ -15,7 +20,7 @@ clink.paste_crlf = space
 # name: Auto-answer terminate prompt
 # type: enum
 # options: off,answer_yes,answer_no
-cmd.auto_answer = off
+cmd.auto_answer = answer_yes
 
 # name: Pressing Ctrl-D exits session
 # type: boolean
@@ -185,7 +190,7 @@ history.expand_mode = not_quoted
 
 # name: Skip adding lines prefixed with whitespace
 # type: boolean
-history.ignore_space = False
+history.ignore_space = True
 
 # name: The number of history lines to save
 # type: integer
@@ -197,7 +202,7 @@ history.save = True
 
 # name: Share history between instances
 # type: boolean
-history.shared = False
+history.shared = True
 
 # name: History item timestamps
 # type: enum
