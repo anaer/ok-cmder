@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <key name="Software">
 	<key name="ConEmu">
-		<key name=".Vanilla" modified="2024-07-19 18:03:09" build="230724">
+		<key name=".Vanilla" modified="2024-08-16 15:00:59" build="230724">
 			<value name="ColorTable00" type="dword" data="00362b00"/>
 			<value name="ColorTable01" type="dword" data="00423607"/>
 			<value name="ColorTable02" type="dword" data="00808000"/>
@@ -127,8 +127,8 @@
 			<value name="ConWnd Width" type="dword" data="00000089"/>
 			<value name="ConWnd Height" type="dword" data="0000001b"/>
 			<value name="Cascaded" type="hex" data="01"/>
-			<value name="ConWnd X" type="long" data="328"/>
-			<value name="ConWnd Y" type="long" data="149"/>
+			<value name="ConWnd X" type="long" data="519"/>
+			<value name="ConWnd Y" type="long" data="242"/>
 			<value name="16bit Height" type="ulong" data="0"/>
 			<value name="AutoSaveSizePos" type="hex" data="01"/>
 			<value name="IntegralSize" type="hex" data="00"/>
@@ -292,7 +292,7 @@
 			<value name="MinimizeOnLoseFocus" type="hex" data="00"/>
 			<value name="DisableFarFlashing" type="hex" data="00"/>
 			<value name="DisableAllFlashing" type="hex" data="00"/>
-			<value name="FindText" type="string" data=""/>
+			<value name="FindText" type="string" data="alibaba"/>
 			<value name="FindMatchCase" type="hex" data="00"/>
 			<value name="FindMatchWholeWords" type="hex" data="00"/>
 			<value name="FindTransparent" type="hex" data="01"/>

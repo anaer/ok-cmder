@@ -2,6 +2,40 @@
 
 ### Releases from [chrisant996/clink](https://github.com/chrisant996/clink) fork
 
+#### v1.6.21
+
+- Reduced the performance overhead of hooked APIs from about 20 microseconds to about 2 microseconds.
+- Enhanced the executable recognition to avoid flickering red (or `color.unrecognized`) for an executable name that was already recognized in a recent previous input line.
+- Enhanced the `srcmap` command in the Lua debugger so that `srcmap dir` automatically sets up source mappings for Clink's built in scripts using `dir` as the repo root.
+- Fixed when `history.expand_mode` is `off`; it didn't fully turn off all of the history expansion syntax forms (for example the `^` syntax).
+- Fixed input line coloring when the first word is a device name (e.g. `nul` or `com1:`); it should use `color.unrecognized` for the color.
+- Fixed [#651](https://github.com/chrisant996/clink/issues/651); completion doesn't work for `./` and `../` anymore in the first word of a command line.  Now when the `match.translate_slashes` setting is `system` or `backslash` then completing `./` and `../` can complete the word as a path, even though CMD does not consider it to be a path.
+- Fixed [#653](https://github.com/chrisant996/clink/issues/653); `clink_start.cmd` gets run twice if the binaries directory is the same as the profile directory.
+- Fixed [#654](https://github.com/chrisant996/clink/issues/654); input line coloring doesn't treat `^` correctly inside quotes (and related quirks).
+
+#### v1.6.20
+
+- Fixed [#652](https://github.com/chrisant996/clink/issues/652); error when trying to update again after updating to v1.6.20 (regression introduced in v1.6.19).
+
+#### v1.6.19
+
+- Fixed truncated descriptions with `clink set exec.` and then `clink-select-complete` (<kbd>Ctrl</kbd>-<kbd>Space</kbd>) (regression introduced in v1.6.11).
+- Fixed fully qualified paths from a different local drive accidentally being colored with `color.unrecognized`.
+- Fixed [#648](https://github.com/chrisant996/clink/issues/648); on Windows 8.1 the title bar can get changed to "Windows PowerShell" for the rest of the CMD session.
+
+#### v1.6.18
+
+- Added a new callback function that can be assigned to an argument position in the table given to `:addarg()` via `onalias=` (see [Responding to Arguments in Argmatchers](#responsive-argmatchers) for more information).  The git argmatcher in the [clink-completions](https://github.com/vladimir-kotikov/clink-completions) repo uses this to support git aliases.
+- When a doskey alias doesn't include any `$` tokens then CMD is guaranteed to ignore the rest of the command line after the alias, so now argmatcher parsing also ignores the rest of the command line and colors it using `color.unexpected`.
+- Suppress the ANSICON warning in the log file and diagnostics output on Windows 8.1.  The performance problem in ANSICON exists, but apparently there isn't a better alternative before Windows 10.
+
+#### v1.6.17
+
+- Added warning in the log file and in `clink-diagnostics` (<kbd>Ctrl</kbd>-<kbd>X</kbd>,<kbd>Ctrl</kbd>-<kbd>Z</kbd>) when ANSICON is detected on Windows 8.1 or greater (it's unnecessary, less functional, and greatly degrades performance).
+- Added language info in `clink-diagnostics` when the code page is not 1252 (for easier troubleshooting).
+- Fixed finding argmatchers registered with exact names (typing `foo` couldn't find an argmatcher registered as `c:\dir\foo.exe` because it accidentally looked for `c:\dir\foo.EXE`).
+- Fixed [#631](https://github.com/chrisant996/clink/issues/631); script error after `cmd ` when the current language is German.
+
 #### v1.6.16
 
 - Added a workaround for how [scoop](https://scoop.sh/) tries to control app versions and updates ([#615](https://github.com/chrisant996/clink/issues/615); scoop causes `clink autorun install` to use a wrong path).

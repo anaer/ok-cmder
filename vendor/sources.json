@@ -6,42 +6,27 @@
   },
   {
     "name": "clink",
-    "version": "v1.6.16",
-    "url": "https://github.com/chrisant996/clink/releases/download/v1.6.16/clink.1.6.16.c5eaf9.zip"
-  },
-  {
-    "name": "conemu-maximus5",
-    "version": "v23.07.24",
-    "url": "https://github.com/Maximus5/ConEmu/releases/download/v23.07.24/ConEmuPack.230724.7z"
-  },
-  {
-    "name": "clink-completions",
-    "version": "0.5.3",
-    "url": "https://github.com/vladimir-kotikov/clink-completions/archive/0.5.3.zip"
-  },
-  {
-    "name": "clink-flex-prompt",
-    "version": "0.17",
-    "url": "https://github.com/chrisant996/clink-flex-prompt/releases/download/v0.17/clink-flex-prompt-0.17.zip"
+    "version": "v1.6.21",
+    "url": "https://github.com/chrisant996/clink/releases/"
   },
   {
     "name": "fzf",
-    "version": "0.53.0",
-    "url": "https://github.com/junegunn/fzf/releases/download/0.53.0/fzf-0.53.0-windows_amd64.zip"
+    "version": "fzf-0.54.3-windows_amd64.zip",
+    "url": "https://github.com/junegunn/fzf/releases/"
   },
   {
     "name": "chsrc",
-    "version": "v0.1.6",
-    "url": "https://github.com/RubyMetric/chsrc/releases/download/v0.1.6/chsrc-x64-windows.exe"
+    "version": "v0.1.7 chsrc-x64-windows.exe",
+    "url": "https://github.com/RubyMetric/chsrc/releases/"
+  },
+  {
+    "name": "conemu-maximus5",
+    "version": "ConEmuPack.230724.7z",
+    "url": "https://github.com/Maximus5/ConEmu/releases/"
   },
   {
     "name": "the_silver_searcher",
     "version": "2.2.0-58-g5a1c8d8",
-    "url": "https://github.com/k-takata/the_silver_searcher-win32/releases/download/2020-07-05%2F2.2.0-58-g5a1c8d8/ag-2020-07-05_2.2.0-58-g5a1c8d8-x86.zip"
-  },
-  {
-    "name": "starship",
-    "version": "v1.19.0",
-    "url": "https://github.com/starship/starship/releases/download/v1.19.0/starship-x86_64-pc-windows-msvc.zip"
+    "url": "https://github.com/k-takata/the_silver_searcher-win32/releases/"
   }
 ]
