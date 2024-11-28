@@ -1,23 +1,23 @@
 [
   {
-    "name": "git-for-windows",
-    "version": "v2.45.2.windows.1",
-    "url": "https://github.com/git-for-windows/git/releases/download/v2.45.2.windows.1/PortableGit-2.45.2-64-bit.7z.exe"
-  },
-  {
     "name": "clink",
-    "version": "v1.6.21",
+    "version": "v1.7.5",
     "url": "https://github.com/chrisant996/clink/releases/"
   },
   {
     "name": "fzf",
-    "version": "fzf-0.54.3-windows_amd64.zip",
+    "version": "fzf-0.56.3-windows_amd64.zip",
     "url": "https://github.com/junegunn/fzf/releases/"
   },
   {
     "name": "chsrc",
-    "version": "v0.1.7 chsrc-x64-windows.exe",
+    "version": "v0.1.9 chsrc-x64-windows.exe",
     "url": "https://github.com/RubyMetric/chsrc/releases/"
+  },
+  {
+    "name": "git-for-windows",
+    "version": "v2.45.2.windows.1",
+    "url": "https://github.com/git-for-windows/git/releases/download/v2.45.2.windows.1/PortableGit-2.45.2-64-bit.7z.exe"
   },
   {
     "name": "conemu-maximus5",
