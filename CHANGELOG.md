@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 25.110.1344
+
+1. 添加z.lua子模块
+  配置时需要在user-profile.cmd中配置环境变量添加lua.exe程序路径和z.lua路径
+
 ## 20240627
 
 1. 停用starship, 恢复使用flex-prompt
