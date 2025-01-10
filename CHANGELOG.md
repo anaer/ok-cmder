@@ -15,7 +15,7 @@ load(io.popen('starship init cmd'):read("*a"))()
 ```
 1.3 添加starship配置文件: config\starship.toml
 1.4 user-profile.cmd添加环境变量配置
-```
+```conf
 :: 设置starship配置文件路径
 set "STARSHIP_CONFIG=%CMDER_ROOT%\config\starship.toml"
 ```

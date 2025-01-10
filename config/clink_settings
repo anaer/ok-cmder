@@ -122,6 +122,10 @@ color.luaprefix = bright cyan on blue
 # type: color
 color.message = default
 
+# name: Prompt color
+# type: color
+color.prompt = white
+
 # name: Readonly file completions
 # type: color
 color.readonly = sgr 38;5;28
