@@ -33,9 +33,10 @@ set "PATH=%CMDER_ROOT%\vendor\cygwin\usr\sbin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\sbin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%PATH%"
 
-:: 添加自定义环境变量
-set "PATH=.;D:\Lua\5.1;D:\SingleWare;C:\Users\Administrator\AppData\Roaming\npm;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\z.lua;%PATH%"
+
+:: 添加自定义环境变量
+set "PATH=.;D:\Putty;D:\Lua\5.1;D:\SingleWare;C:\Users\Administrator\AppData\Roaming\npm;%PATH%"
 
 :: 设置starship配置文件路径
 set "STARSHIP_CONFIG=%CMDER_ROOT%\config\starship.toml"
