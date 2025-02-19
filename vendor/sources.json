@@ -1,12 +1,12 @@
 [
   {
     "name": "clink",
-    "version": "v1.7.5",
+    "version": "v1.7.10",
     "url": "https://github.com/chrisant996/clink/releases/"
   },
   {
     "name": "fzf",
-    "version": "fzf-0.56.3-windows_amd64.zip",
+    "version": "fzf-0.60.0-windows_amd64.zip",
     "url": "https://github.com/junegunn/fzf/releases/"
   },
   {
