@@ -15,3 +15,6 @@ tmp/
 vendor/conemu-maximus5/ConEmu/clink
 vendor/cygwin/
 *.old
+vendor/z.lua
+vendor/clink-completions
+vendor/clink-gizmos
