@@ -2,6 +2,51 @@
 
 ### Releases from [chrisant996/clink](https://github.com/chrisant996/clink) fork
 
+#### v1.7.16
+
+- Fixed potential crash after pressing <kbd>Home</kbd> and then deleting the first word in the input line (regression introduced in v1.7.15).
+
+#### v1.7.15
+
+- Fixed the sequence of characters `clink echo` reports for <kbd>Ctrl</kbd>-<kbd>Bkspc</kbd>.
+- Fixed an issue where the `match.expand_abbrev` setting could accidentally move the cursor position when trying to complete `x:\does_not_exist`.
+- Fixed input line coloring to refresh the display if `clink.argmatcher()` registers a new argmatcher in response to an event such as `clink.oncommand`.
+- Fixed extra prompt(s) that could printed if a `luafunc:` command used `rl_buffer:beginoutput()` and then `rl.invokecommand()` to invoke another `luafunc:` command that did the same, nesting multiple times.
+- Fixed negative numeric arguments with `rl_buffer:getargument()` and `rl_buffer:setargument()`.
+- Fixed potential heap corruption in `os.enumshares()`.
+- Fixed both completions and `clink.parseline()` when a command is a doskey alias but ends up with only a command name and spaces after expanding the alias (completions got confused about which argument slot was being completed, and `clink.parseline()` accidentally reported an extra empty word at the end of the input line).
+- Fixed [#743](https://github.com/chrisant996/clink/issues/743); output doesn't scroll terminal correctly when the terminal screen buffer width is wider than the terminal window width (regression introduced in v1.6.2).
+- Fixed [#744](https://github.com/chrisant996/clink/issues/744); `git.getaction()` prevents git from properly cleaning up rebase files if you edit a commit during a rebase.
+- Fixed [#745](https://github.com/chrisant996/clink/issues/745); out of bounds read in memcpy after typing `cmd /;=` and then moving the cursor left twice (regression introduced in v1.5.17).
+
+#### v1.7.14
+
+- Added a new `clink.scroll_offset` setting which controls how many lines to show above or below the selected item in popup lists or the `clink-select-complete` command (default is 3).
+- Changed <code>clink set <span class="arg">name</span></code> to include the default value of the named setting.
+- The Antares clinkprompt now allows configuring the characters for showing the previous command's exit code (refer to the Antares.clinkprompt file for details).
+- The `clink-diagnostics` and `clink-diagnostics-output` bindable commands also show the current *.clinkprompt custom prompt file, if any.
+- Fixed a problem where <kbd>Esc</kbd> could leak or corrupt history undo lists when used after searching history (the problem existed since v0.1 in 2012).
+- Fixed the `clink-show-help` command to stop listing the `A-f` default key binding as an "Uncategorized" command.
+- Fixed a typo in the Antares clinkprompt when trying to detect a bare git repo.
+- Fixed the `history.sticky_search` setting (regression introduced in v1.5.12).
+- Fixed default color for `color.selected_completion` to have better contrast ratio in light terminal themes.
+- Fixed input edge cases in the `win-history-list` command which missed updating the display.
+- Fixed a color glitch in the `clink-popup-history` command for history lines marked as having been modified in memory.
+- Fixed the `win-history-list` command to show a mark for history lines that have been modified in memory, like the `clink-popup-history` command already does.
+- Fixed an issue where instead of always starting on a new line, output from a command could potentially accidentally start at the end of the input line.
+- Fixed some memory management bugs in history item undo lists.
+- Added a workaround to fix [#738](https://github.com/chrisant996/clink/issues/738); Windows Terminal does not handle the `CSI K` code correctly when the cursor is past the end of the screen line.
+- Improvements for [#739](https://github.com/chrisant996/clink/issues/739); ConsoleZ, ConEmu, and other tools can interfere with injecting Clink (there's no way to completely prevent opportunities for interference, but this reduces the chances).
+
+#### v1.7.13
+
+- Added an error message when `clink set` fails to write the `clink_settings` file (e.g. no permission or the file is marked read-only).
+- Added logging when `clink inject` is slow.
+- Added keyboard info in `clink echo --verbose`.
+- Condensed the logging during `clink inject`, but if an error occurs while hooking system APIs then it automatically emits verbose logging instead of condensed logging.
+- Fixed the maximum vertical scroll position limiter to include the input hint row when using the legacy Windows conhost.
+- Fixed [#732](https://github.com/chrisant996/clink/issues/732); Executable Completion does not recognize `.LNK` files.
+
 #### v1.7.12
 
 - Fixed what `io.popenyield()` returns upon failure; previously it accidentally only returned nil, and now upon failure it returns the usual values (nil, error message, error code).
