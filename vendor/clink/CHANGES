@@ -2,6 +2,27 @@
 
 ### Releases from [chrisant996/clink](https://github.com/chrisant996/clink) fork
 
+#### v1.7.18
+
+- Fixed [#752](https://github.com/chrisant996/clink/issues/752); `clink config theme use {name}` reports an error (regression introduced in v1.7.17).
+
+#### v1.7.17
+
+- Added "4-bit Enhanced Defaults.clinktheme" color theme which approximates the "Enhanced Defaults" colors using only 4-bit terminal colors.
+- Added a `clink config theme save -d` flag to save a color theme with placeholders for color settings whose current value matches its default value.  Loading a color theme saved this way resets those colors to whatever default values are defined at the moment the file is loaded.
+- Changed the default behavior for throttling Lua coroutines.  By default there is no throttling anymore.  The new `lua.throttle_interval` setting can be used to enable throttling of Lua coroutines if they cause responsiveness issues.  Prior to this, the throttling interval had been hard-coded to 5 seconds, but now it's configurable and is 0 by default (no throttling).
+- Changed `rl.getpromptinfo()` to be allowed during transient prompt filtering (but still not during normal prompt filtering).
+- Added an optimization to replay keyboard macros faster.
+- Added an optimization to read key sequences faster, which makes Clink a little more responsive while typing.
+- Fixed erasing leftover input text if the prompt height changes while typing.
+- Fixed the `oncommand` event when an argmatcher uses `:chaincommand()`.
+- Fixed the `line_state` sent to `luafunc:` macros invoked during a keyboard macro (it was empty if the keyboard macro had changed the input line).
+- Fixed use of `clink.promptcoroutine()` during transient prompt filtering (it was accidentally trying to do asynchronous prompt filtering, which isn't possible during transient prompt filtering).
+- Fixed the `onadvance` callback in argmatchers so it doesn't interfere with match generation.
+- Fixed a problem where `clink-popup-history` could leak or lose the undo list from the current input line.
+- Fixed an error when applying a `*.clinktheme` file with a `[clear]` section.
+- Fixed [#751](https://github.com/chrisant996/clink/issues/751); multi-line oh-my-posh config without newlines causes display problem.
+
 #### v1.7.16
 
 - Fixed potential crash after pressing <kbd>Home</kbd> and then deleting the first word in the input line (regression introduced in v1.7.15).
@@ -15,6 +36,7 @@
 - Fixed negative numeric arguments with `rl_buffer:getargument()` and `rl_buffer:setargument()`.
 - Fixed potential heap corruption in `os.enumshares()`.
 - Fixed both completions and `clink.parseline()` when a command is a doskey alias but ends up with only a command name and spaces after expanding the alias (completions got confused about which argument slot was being completed, and `clink.parseline()` accidentally reported an extra empty word at the end of the input line).
+- Fixed refreshing the display after an `oncommand` callback loads a new argmatcher.
 - Fixed [#743](https://github.com/chrisant996/clink/issues/743); output doesn't scroll terminal correctly when the terminal screen buffer width is wider than the terminal window width (regression introduced in v1.6.2).
 - Fixed [#744](https://github.com/chrisant996/clink/issues/744); `git.getaction()` prevents git from properly cleaning up rebase files if you edit a commit during a rebase.
 - Fixed [#745](https://github.com/chrisant996/clink/issues/745); out of bounds read in memcpy after typing `cmd /;=` and then moving the cursor left twice (regression introduced in v1.5.17).
