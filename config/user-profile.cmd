@@ -33,12 +33,13 @@ set "PATH=%CMDER_ROOT%\vendor\cygwin\usr\sbin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\sbin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%PATH%"
 
-set "PATH=%CMDER_ROOT%\vendor\z.lua;%PATH%"
+@REM set "PATH=%CMDER_ROOT%\vendor\z.lua;%PATH%"
+set "PATH=%CMDER_ROOT%\vendor\zoxide;%PATH%"
 
 :: 添加自定义环境变量
 set "PATH=.;D:\Putty;D:\Lua\5.1;D:\SingleWare;C:\Users\Administrator\AppData\Roaming\npm;%PATH%"
 
 :: 设置starship配置文件路径
-set "STARSHIP_CONFIG=%CMDER_ROOT%\config\starship.toml"
+@REM set "STARSHIP_CONFIG=%CMDER_ROOT%\config\starship.toml"
 :: 设置starship日志级别, 用于隐藏timeout的警告日志
-set "STARSHIP_LOG=error"
+@REM set "STARSHIP_LOG=error"
