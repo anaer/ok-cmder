@@ -92,6 +92,11 @@ mklink /D "%CMDER_ROOT%\vendor\conemu-maximus5\ConEmu\clink" "%CMDER_ROOT%\vendo
 @REM 设置fzf.exe程序路径
 clink set fzf.exe_location %CMDER_ROOT%\bin\systools
 
+clink installscripts %CMDER_ROOT%\vendor\clink-completions\
+clink installscripts %CMDER_ROOT%\vendor\clink-flex-prompt\
+clink installscripts %CMDER_ROOT%\vendor\clink-gizmos\
+clink installscripts %CMDER_ROOT%\vendor\zoxide\
+
 @REM clink set autosuggest.strategy fuzzy_history
 @REM clink set fishcomplete.enable true
 

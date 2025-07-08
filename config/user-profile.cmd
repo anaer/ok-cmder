@@ -35,9 +35,12 @@ set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%PATH%"
 
 @REM set "PATH=%CMDER_ROOT%\vendor\z.lua;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\zoxide;%PATH%"
+set "PATH=%CMDER_ROOT%\vendor\clink-completions;%PATH%"
+set "PATH=%CMDER_ROOT%\vendor\clink-flex-prompt;%PATH%"
+set "PATH=%CMDER_ROOT%\vendor\clink-gizmos;%PATH%"
 
 :: 添加自定义环境变量
-set "PATH=.;D:\Putty;D:\Lua\5.1;D:\SingleWare;C:\Users\Administrator\AppData\Roaming\npm;%PATH%"
+set "PATH=.;D:\Putty;D:\Lua\5.1;D:\GreenWare;C:\Users\Administrator\AppData\Roaming\npm;%PATH%"
 
 :: 设置starship配置文件路径
 @REM set "STARSHIP_CONFIG=%CMDER_ROOT%\config\starship.toml"
