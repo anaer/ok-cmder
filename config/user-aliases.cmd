@@ -7,6 +7,7 @@
 e.=explorer .
 gl=git log --oneline --all --graph --decorate  $*
 ls=ls --show-control-chars -F --color $*
+ll=ls --show-control-chars -F --color $*
 pwd=cd
 clear=cls
 history=cat "%CMDER_ROOT%\config\.history"
@@ -20,4 +21,5 @@ open=explorer.exe $*
 start=explorer.exe $*
 
 pwsh=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -Command "Invoke-Expression '. ''%CMDER_ROOT%/vendor/profile.ps1'''"
-awk=gawk $*  
+awk=gawk $*
+rg=ag
