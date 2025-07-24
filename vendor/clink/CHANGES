@@ -2,6 +2,12 @@
 
 ### Releases from [chrisant996/clink](https://github.com/chrisant996/clink) fork
 
+#### v1.7.21
+
+- Fixed TAB expansion of `foo ~` when there is no argmatcher for `foo`.
+- Fixed [#772](https://github.com/chrisant996/clink/issues/772); uninstall fails to uninstall autorun if the logged on user is not an administrator.
+- Fixed [#773](https://github.com/chrisant996/clink/issues/773); unexpected completion behavior after a doskey alias command.
+
 #### v1.7.20
 
 - Fixed [#763](https://github.com/chrisant996/clink/issues/763); transient prompt has blank line after it if the input line is the width of the terminal (regression introduced in v1.7.0).
