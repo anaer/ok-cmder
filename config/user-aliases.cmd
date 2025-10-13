@@ -24,3 +24,4 @@ pwsh=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolic
 awk=gawk $*
 rg=ag
 ad=alias /reload
+vim=code
