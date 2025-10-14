@@ -1,18 +1,21 @@
 [
   {
     "name": "clink",
-    "version": "v1.7.20",
-    "url": "https://github.com/chrisant996/clink/releases/"
+    "version": "v1.8.6",
+    "url": "https://github.com/chrisant996/clink/releases/",
+    "desc": "clink update更新"
   },
   {
     "name": "fzf",
-    "version": "fzf-0.64.0-windows_amd64.zip",
-    "url": "https://github.com/junegunn/fzf/releases/"
+    "version": "fzf-0.66.0-windows_amd64.zip",
+    "url": "https://github.com/junegunn/fzf/releases/",
+    "desc": "bin/systools/fzf.exe"
   },
   {
     "name": "chsrc",
-    "version": "v0.2.2 chsrc-x64-windows.exe",
-    "url": "https://github.com/RubyMetric/chsrc/releases/"
+    "version": "v0.2.3 chsrc-x64-windows.exe",
+    "url": "https://github.com/RubyMetric/chsrc/releases/",
+    "desc": "bin/systools/chsrc.exe"
   },
   {
     "name": "git-for-windows",
@@ -27,6 +30,7 @@
   {
     "name": "the_silver_searcher",
     "version": "2.2.0-58-g5a1c8d8",
-    "url": "https://github.com/k-takata/the_silver_searcher-win32/releases/"
+    "url": "https://github.com/k-takata/the_silver_searcher-win32/releases/",
+    "desc": "bin/systools/ag.exe"
   }
 ]
