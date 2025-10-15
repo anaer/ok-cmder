@@ -138,6 +138,14 @@ color.selected_completion = sgr 7
 # type: color
 color.selection = sgr 38;5;16;48;5;179
 
+# name: Color for transient divider line
+# type: color
+color.transient_divider_line = sgr 38;5;240
+
+# name: Color for duration text in transient line
+# type: color
+color.transient_divider_text = sgr 38;5;214
+
 # name: Unexpected argument color
 # type: color
 color.unexpected = default

@@ -32,5 +32,11 @@
     "version": "2.2.0-58-g5a1c8d8",
     "url": "https://github.com/k-takata/the_silver_searcher-win32/releases/",
     "desc": "bin/systools/ag.exe"
+  },
+  {
+    "name": "zoxide",
+    "version": "v0.9.8",
+    "url": "https://github.com/ajeetdsouza/zoxide/releases",
+    "desc": "vendor/zoxide/"
   }
 ]
