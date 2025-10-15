@@ -14,7 +14,3 @@
 # 	path = vendor/z.lua
 # 	url = https://github.com/skywind3000/z.lua.git
 
-[submodule "vendor/more-clink-completions"]
-	path = vendor/more-clink-completions
-	url = https://github.com/sebthom/more-clink-completions
-	branch = v2-releases
