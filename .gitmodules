@@ -10,6 +10,6 @@
 	path = vendor/clink-completions
 	url = https://github.com/vladimir-kotikov/clink-completions.git
 
-[submodule "vendor/z.lua"]
-	path = vendor/z.lua
-	url = https://github.com/skywind3000/z.lua.git
+# [submodule "vendor/z.lua"]
+# 	path = vendor/z.lua
+# 	url = https://github.com/skywind3000/z.lua.git
