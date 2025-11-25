@@ -1,0 +1,30 @@
+- name: clink
+  version: v1.8.6
+  url: https://github.com/chrisant996/clink/releases/
+  desc: clink update更新
+- name: fzf
+  version: fzf-0.66.0-windows_amd64.zip
+  url: https://github.com/junegunn/fzf/releases/
+  path: bin/systools/fzf.exe
+- name: chsrc
+  version: v0.2.3 chsrc-x64-windows.exe
+  url: https://github.com/RubyMetric/chsrc/releases/
+  path: bin/systools/chsrc.exe
+- name: git-for-windows
+  version: v2.50.1-64-bit
+  url: https://github.com/git-for-windows/git/releases/
+- name: conemu-maximus5
+  version: ConEmuPack.230724.7z
+  url: https://github.com/Maximus5/ConEmu/releases/
+- name: the_silver_searcher
+  version: 2.2.0-58-g5a1c8d8
+  url: https://github.com/k-takata/the_silver_searcher-win32/releases/
+  path: bin/systools/ag.exe
+- name: zoxide
+  version: v0.9.8
+  url: https://github.com/ajeetdsouza/zoxide/releases
+  path: vendor/zoxide/
+- name: lsx
+  version: v1.1.0
+  url: https://github.com/CJSen/lsx/releases/
+  path: bin/systools/lsx.exe
