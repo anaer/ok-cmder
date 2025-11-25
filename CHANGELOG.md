@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 25.1125.1032
+
+1. 添加dl.cmd github加速下载脚本
+   用法 `dl.cmd https://github.com/CJSen/lsx/releases/download/v1.1.0/lsx_windows_amd64.exe.zip`
+
 ## 25.1013.948
 
 1. 更新clink->1.8.6
