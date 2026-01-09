@@ -37,16 +37,12 @@ def generate_cdn_url(github_url):
         "gh.nxnow.top/https://github.com",
         "gh.zwy.one/https://github.com",
         "ghfast.top/https://github.com",
-        "ghfile.geekertao.top/https://github.com",
-        "ghp.keleyaa.com/https://github.com",
         "ghproxy.1888866.xyz/https://github.com",
         "ghproxy.cfd/https://github.com",
         "ghproxy.cxkpro.top/https://github.com",
         "ghproxy.net/https://github.com",
-        "ghpxy.hwinzniej.top/https://github.com",
         "git.yylx.win/https://github.com",
         "github.boki.moe/https://github.com",
-        "github.ednovas.xyz/https://github.com",
         "github.eo.bian666.cf/https://github.com",
         "github.limoruirui.com/https://github.com",
         "github.tbedu.top/https://github.com",
@@ -61,6 +57,10 @@ def generate_cdn_url(github_url):
         "cdn.gh-proxy.org/https://github.com",
         "rapidgit.jjda.de5.net/https://github.com",
         "gh.llkk.cc/https://github.com",
+        "ghp.keleyaa.com/https://github.com",
+        "ghpxy.hwinzniej.top/https://github.com",
+        "ghfile.geekertao.top/https://github.com",
+        "github.ednovas.xyz/https://github.com",
     ]
 
     cdn_domains = cdn_domains[:10]
