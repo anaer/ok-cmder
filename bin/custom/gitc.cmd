@@ -113,7 +113,7 @@ if not errorlevel 1 (
     )
 )
 
-echo "ℹ 创建新分支 %NEW_BRANCH%..."
+echo "ℹ️  创建新分支 %NEW_BRANCH%..."
 git checkout -b %NEW_BRANCH%
 echo "✅ 创建新分支: %NEW_BRANCH%"
 
