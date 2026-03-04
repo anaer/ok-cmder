@@ -34,22 +34,15 @@ def convert_to_github_url(url):
 def generate_cdn_url(github_url):
     # 构建 GitHub CDN 下载链接
     cdn_domains = [
+        "ghproxy.it/https://github.com",
         "gh.nxnow.top/https://github.com",
         "gh.zwy.one/https://github.com",
         "ghfast.top/https://github.com",
         "ghproxy.1888866.xyz/https://github.com",
         "ghproxy.cfd/https://github.com",
-        "ghproxy.cxkpro.top/https://github.com",
-        "ghproxy.net/https://github.com",
         "git.yylx.win/https://github.com",
-        "github.boki.moe/https://github.com",
-        "github.eo.bian666.cf/https://github.com",
-        "github.limoruirui.com/https://github.com",
-        "github.tbedu.top/https://github.com",
         "gitproxy.mrhjx.cn/https://github.com",
-        "hub.gitmirror.com/https://github.com",
         "raw.ihtw.moe/github.com",
-        "testingcf.jsdelivr.net/gh",
         "wget.la/https://github.com",
         "xget.xi-xu.me/gh",
         # 以下源 请求有报错
@@ -61,6 +54,14 @@ def generate_cdn_url(github_url):
         "ghpxy.hwinzniej.top/https://github.com",
         "ghfile.geekertao.top/https://github.com",
         "github.ednovas.xyz/https://github.com",
+        "github.boki.moe/https://github.com",
+        "ghproxy.cxkpro.top/https://github.com",
+        "github.eo.bian666.cf/https://github.com",
+        "github.tbedu.top/https://github.com",
+        "github.limoruirui.com/https://github.com",
+        "hub.gitmirror.com/https://github.com",
+        "ghproxy.net/https://github.com",
+        "testingcf.jsdelivr.net/gh",
     ]
 
     cdn_domains = cdn_domains[:10]
@@ -81,12 +82,6 @@ def generate_cdn_url(github_url):
             if domain.endswith("/gh"):
                 # jsdelivr 格式
                 urls.append(f"https://{domain}{repo_path}@{branch}/{file_path}")
-            elif "github.com" in domain:
-                # ghproxy 等格式
-                urls.append(f"https://{domain}{repo_path}/raw/{branch}/{file_path}")
-            elif "github" in domain:
-                # 其他格式
-                urls.append(f"https://{domain}{repo_path}/raw/{branch}/{file_path}")
             else:
                 urls.append(f"https://{domain}{repo_path}/raw/{branch}/{file_path}")
     else:

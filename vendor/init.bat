@@ -336,5 +336,7 @@ echo @echo off
 
 set initialConfig=
 @REM 设置编码 UTF-8 解决logback console中文乱码
-chcp 65001
+@REM chcp 65001
+@REM 设置编码 GBK
+chcp 936
 exit /b
