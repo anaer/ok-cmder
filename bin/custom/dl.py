@@ -105,21 +105,16 @@ def main():
     input_url = sys.argv[1] if len(sys.argv) > 1 else input("请输入 GitHub 链接或文件链接：")
     download_dir = sys.argv[2] if len(sys.argv) > 2 else '.'
 
+    cdn_urls = []
     if not is_github_url(input_url):
-        print("输入的链接不是 GitHub 链接，正在尝试转换...")
-        try:
-            github_url = convert_to_github_url(input_url)
-            print(f"转换后的 GitHub 链接: {github_url}")
-        except ValueError as e:
-            print(f"错误: {e}")
-            return
+        print("输入的链接不是 GitHub 链接，直接使用...")
+        cdn_urls.append(input_url)
     else:
         # 先规范化 URL（处理 raw.githubusercontent.com）
         github_url = normalize_github_url(input_url)
         print(f"输入的 GitHub 链接: {github_url}")
-
-    cdn_urls = generate_cdn_url(github_url)
-    print(f"生成的 CDN 下载链接: {cdn_urls[0]}")
+        cdn_urls = generate_cdn_url(github_url)
+        print(f"生成的 CDN 下载链接: {cdn_urls[0]}")
 
     # 执行下载
     print(f"开始下载... 下载目录:{download_dir}")
