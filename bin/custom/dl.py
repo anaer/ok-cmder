@@ -36,10 +36,8 @@ def generate_cdn_url(github_url):
     cdn_domains = [
         "cdn.crashmc.com/https://github.com",
         "cors.isteed.cc/github.com",
-        "down.npee.cn/?https://github.com",
         "edgeone.gh-proxy.org/https://github.com",
         "fastgit.cc/https://github.com",
-        "firewall.lxstd.org/https://github.com",
         "gh-proxy.net/https://github.com",
         "gh-proxy.org/https://github.com",
         "gh.chjina.com/https://github.com",
@@ -59,7 +57,9 @@ def generate_cdn_url(github_url):
         "gitproxy.mrhjx.cn/https://github.com",
         "raw.ihtw.moe/github.com",
         "wget.la/https://github.com",
+        "down.npee.cn/https://github.com",
         # 以下源 请求有报错
+        "firewall.lxstd.org/https://github.com",
         "cdn.gh-proxy.org/https://github.com",
         "cdn.jsdelivr.net/gh",
         "gh.llkk.cc/https://github.com",
