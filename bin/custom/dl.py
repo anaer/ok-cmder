@@ -33,14 +33,21 @@ def convert_to_github_url(url):
 # 根据 GitHub 链接生成 CDN 下载链接
 def generate_cdn_url(github_url):
     # 构建 GitHub CDN 下载链接
+    # curl https://git.mxg.pub/api/github/list | jq ".data[].url"
     cdn_domains = [
-        "cdn.crashmc.com/https://github.com",
+        "gh.llkk.cc/https://github.com",
+        "tvv.tw/https://github.com",
+        "gitproxy.click/https://github.com",
+        "gh-proxy.com/https://github.com",
+        "g.blfrp.cn/https://github.com",
+        "github-proxy.lixxing.top/https://github.com",
         "cors.isteed.cc/github.com",
         "edgeone.gh-proxy.org/https://github.com",
         "fastgit.cc/https://github.com",
         "gh-proxy.net/https://github.com",
         "gh-proxy.org/https://github.com",
         "gh.chjina.com/https://github.com",
+        "gh.catmak.name/https://github.com",
         "gh.ddlc.top/https://github.com",
         "gh.h233.eu.org/https://github.com",
         "gh.idayer.com/https://github.com",
@@ -58,7 +65,10 @@ def generate_cdn_url(github_url):
         "raw.ihtw.moe/github.com",
         "wget.la/https://github.com",
         "down.npee.cn/https://github.com",
+        "cdn.jsmirror.com/gh",
+        "jsd.onmicrosoft.cn/gh",
         # 以下源 请求有报错
+        "cdn.crashmc.com/https://github.com",
         "firewall.lxstd.org/https://github.com",
         "cdn.gh-proxy.org/https://github.com",
         "cdn.jsdelivr.net/gh",
