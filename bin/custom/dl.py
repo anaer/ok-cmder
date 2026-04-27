@@ -35,25 +35,15 @@ def generate_cdn_url(github_url):
     # 构建 GitHub CDN 下载链接
     # curl https://git.mxg.pub/api/github/list | jq ".data[].url"
     cdn_domains = [
-        "gh.llkk.cc/https://github.com",
-        "tvv.tw/https://github.com",
-        "gitproxy.click/https://github.com",
-        "gh-proxy.com/https://github.com",
-        "g.blfrp.cn/https://github.com",
-        "github-proxy.lixxing.top/https://github.com",
         "cors.isteed.cc/github.com",
         "edgeone.gh-proxy.org/https://github.com",
         "fastgit.cc/https://github.com",
-        "gh-proxy.net/https://github.com",
         "gh-proxy.org/https://github.com",
         "gh.chjina.com/https://github.com",
         "gh.catmak.name/https://github.com",
         "gh.ddlc.top/https://github.com",
-        "gh.h233.eu.org/https://github.com",
-        "gh.idayer.com/https://github.com",
         "gh.jasonzeng.dev/https://github.com",
         "gh.monlor.com/https://github.com",
-        "gh.xx9527.cn/https://github.com",
         "gh.xxooo.cf/https://github.com",
         "gh.zwy.one/https://github.com",
         "ghfast.top/https://github.com",
@@ -67,7 +57,13 @@ def generate_cdn_url(github_url):
         "down.npee.cn/https://github.com",
         "cdn.jsmirror.com/gh",
         "jsd.onmicrosoft.cn/gh",
+        "proxy.v2gh.com/https://github.com",
+        "mirror.v2gh.com/https://github.com",
         # 以下源 请求有报错
+        "gitproxy.click/https://github.com",
+        "gh-proxy.net/https://github.com",
+        "g.blfrp.cn/https://github.com",
+        "tvv.tw/https://github.com",
         "cdn.crashmc.com/https://github.com",
         "firewall.lxstd.org/https://github.com",
         "cdn.gh-proxy.org/https://github.com",
@@ -89,6 +85,11 @@ def generate_cdn_url(github_url):
         "rapidgit.jjda.de5.net/https://github.com",
         "testingcf.jsdelivr.net/gh",
         "xget.xi-xu.me/gh",
+        "gh.idayer.com/https://github.com", # SSL/TLS handshake failure
+        "gh.h233.eu.org/https://github.com", # SSL/TLS handshake failure
+        "gh-proxy.com/https://github.com", # SSL/TLS handshake failure
+        "github-proxy.lixxing.top/https://github.com", # 403
+        "gh.xx9527.cn/https://github.com", # Name resolution for gh.xx9527.cn failed:Domain name not found
     ]
 
     cdn_domains = cdn_domains[:10]
