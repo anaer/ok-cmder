@@ -26,12 +26,9 @@ rg=ag
 ad=alias /reload
 vim=code
 
-mvn=alias|grep mvn
+mvn-h=alias|grep mvn
 mci=mvnd clean install
 mci-s=mvnd clean install -DskipTests
-mcp=mvnd clean package
-mcp-s=mvnd clean package -DskipTests
-mvn-update=mvnd versions:use-latest-releases
 mvn-tree=mvnd dependency:tree
 mvn-dep=mvnd dependency:analyze
 mvn-u=mvnd dependency:resolve -U
