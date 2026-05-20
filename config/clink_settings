@@ -2,6 +2,11 @@
 # type: string
 autosuggest.strategy = fuzzy_history
 
+# name: Auto-update the Clink program files
+# type: enum
+# options: off,check,prompt,auto
+clink.autoupdate = off
+
 # name: Selects default key bindings
 # type: enum
 # options: bash,windows
