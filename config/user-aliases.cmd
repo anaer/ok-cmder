@@ -32,5 +32,9 @@ mci-s=mvnd clean install -DskipTests
 mvn-tree=mvnd dependency:tree
 mvn-dep=mvnd dependency:analyze
 mvn-u=mvnd dependency:resolve -U
+;= 下载源码
 mvn-ds=mvnd dependency:resolve -Dclassifier=sources
+;= 下载文档
 mvn-dd=mvnd dependency:resolve -Dclassifier=javadoc
+;= 检查依赖版本更新
+mvn-v=mvnd versions:display-dependency-updates -DallowSnapshots=false -DallowMajorUpdates=false -DallowMinorUpdates=false
