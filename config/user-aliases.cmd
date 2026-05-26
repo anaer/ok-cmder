@@ -10,10 +10,9 @@ ls=ls --show-control-chars -F --color $*
 ll=ls --show-control-chars -F --color $*
 pwd=cd
 clear=cls
-history=cat "%CMDER_ROOT%\config\.history"
 unalias=alias /d $1
 vi=vim $*
-cmderr=cd /d "%CMDER_ROOT%"
+cmder_home=cd /d "%CMDER_ROOT%"
 
 cd=mycd.bat $*
 
@@ -26,15 +25,18 @@ rg=ag
 ad=alias /reload
 vim=code
 
+;= mvn 命令别名
 mvn-h=alias|grep mvn
-mci=mvnd clean install
-mci-s=mvnd clean install -DskipTests
-mvn-tree=mvnd dependency:tree
-mvn-dep=mvnd dependency:analyze
-mvn-u=mvnd dependency:resolve -U
+mci=chcp 65001 && mvnd clean install $*
+mci-s=chcp 65001 && mvnd clean install -DskipTests $*
+mvn-tree=mvnd dependency:tree $*
+mvn-dep=mvnd dependency:analyze $*
+mvn-u=mvnd dependency:resolve -U $*
 ;= 下载源码
-mvn-ds=mvnd dependency:resolve -Dclassifier=sources
+mvn-ds=mvnd dependency:resolve -Dclassifier=sources $*
 ;= 下载文档
-mvn-dd=mvnd dependency:resolve -Dclassifier=javadoc
+mvn-dd=mvnd dependency:resolve -Dclassifier=javadoc $*
 ;= 检查依赖版本更新
-mvn-v=mvnd versions:display-dependency-updates -DallowSnapshots=false -DallowMajorUpdates=false -DallowMinorUpdates=false
+mvn-v=mvnd versions:display-dependency-updates -DallowSnapshots=false $*
+mvn-v2=mvnd versions:display-dependency-updates -DallowSnapshots=false -DallowMajorUpdates=false $*
+mvn-v3=mvnd versions:display-dependency-updates -DallowSnapshots=false -DallowMajorUpdates=false -DallowMinorUpdates=false $*
