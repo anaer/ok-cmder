@@ -18,3 +18,6 @@ if not "%option%"=="null" (
 %gitcmd% config --local alias.cm commit
 %gitcmd% config --local alias.br branch
 %gitcmd% config --local alias.df diff
+
+:: 禁用分页器，避免在某些环境下卡住报错
+%gitcmd% config --global core.pager ""
