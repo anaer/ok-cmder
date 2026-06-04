@@ -17,8 +17,10 @@ awk=gawk $*
 rg=ag
 
 ;= Git 命令别名 =================================================
-;= Git 默认使用 less 作为分页器，可能卡住报错, 需要禁用分页器--no-pager
-gl=git --no-pager log --oneline --all --graph --decorate  $*
+;= Git 默认使用 less 作为分页器，可能卡住报错, 需要禁用分页器 添加参数--no-pager 或者修改配置 git config --global core.pager ""
+;= 查看最近10日志修改日志, 支持传参指定文件
+gl=git log -10 --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all $*
+;= 查看文件变更
 gp=git status --porcelain
 
 ;= 别名管理 =================================================
