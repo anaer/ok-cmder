@@ -12,9 +12,15 @@ ll=ls --show-control-chars -F --color $*
 
 clear=cls
 
-pwsh=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -Command "Invoke-Expression '. ''%CMDER_ROOT%/vendor/profile.ps1'''"
+
 awk=gawk $*
 rg=ag
+
+;= Powershell别名 =================================================
+pwsh=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -Command "Invoke-Expression '. ''%CMDER_ROOT%/vendor/profile.ps1'''"
+
+;= 展示当前目录下最大的10个目录 按大小降序
+dsizes=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -Command "Invoke-Expression '. ''%CMDER_ROOT%/bin/custom/dir-sizes.ps1'''"
 
 ;= Git 命令别名 =================================================
 ;= Git 默认使用 less 作为分页器，可能卡住报错, 需要禁用分页器 添加参数--no-pager 或者修改配置 git config --global core.pager ""
