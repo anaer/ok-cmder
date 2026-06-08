@@ -1,13 +1,13 @@
 - name: clink
-  version: v1.8.6
+  version: v1.9.25
   url: https://github.com/chrisant996/clink/releases/
   desc: clink update更新
 - name: fzf
-  version: fzf-0.66.0-windows_amd64.zip
+  version: fzf-0.73.1-windows_amd64.zip
   url: https://github.com/junegunn/fzf/releases/
   path: bin/systools/fzf.exe
 - name: chsrc
-  version: v0.2.3 chsrc-x64-windows.exe
+  version: v0.2.5 chsrc-x64-windows.exe
   url: https://github.com/RubyMetric/chsrc/releases/
   path: bin/systools/chsrc.exe
 - name: git-for-windows
@@ -21,7 +21,7 @@
   url: https://github.com/k-takata/the_silver_searcher-win32/releases/
   path: bin/systools/ag.exe
 - name: zoxide
-  version: v0.9.8
+  version: v0.9.9 zoxide-0.9.9-x86_64-pc-windows-msvc.zip
   url: https://github.com/ajeetdsouza/zoxide/releases
   path: vendor/zoxide/
 - name: lsx
