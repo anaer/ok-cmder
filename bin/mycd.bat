@@ -1,7 +1,7 @@
 @echo off
 
 if "%*" == "help" call :myHelp & exit /b
-if "%*" == "" call :myHelp & exit /b        
+if "%*" == "" call :myHelp & exit /b
 
 if "%1" == "-" (
     cd /d %OLDPATH%
@@ -19,6 +19,10 @@ if "%1" == "-" (
     cd "%*"
     if not errorlevel 1 set OLDPATH="%cd%"
 )
+
+@REM 进入/离开目录时, 设置Python版本变量
+call "%CMDER_ROOT%\config\user-config.bat"
+
 exit /b
 
 :myHelp
