@@ -35,9 +35,6 @@ set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%PATH%"
 
 @REM set "PATH=%CMDER_ROOT%\vendor\z.lua;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\zoxide;%PATH%"
-set "PATH=%CMDER_ROOT%\vendor\clink-completions;%PATH%"
-set "PATH=%CMDER_ROOT%\vendor\clink-flex-prompt;%PATH%"
-set "PATH=%CMDER_ROOT%\vendor\clink-gizmos;%PATH%"
 
 :: 添加自定义环境变量
 set "PATH=.;C:\Users\Administrator\.local\bin;D:\Putty;D:\Lua\5.1;D:\GreenWare;C:\Users\Administrator\AppData\Roaming\npm;C:\Windows\System32;%PATH%"

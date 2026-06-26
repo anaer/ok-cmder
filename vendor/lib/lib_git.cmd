@@ -2,7 +2,7 @@
 
 
 call "%~dp0lib_base.cmd"
-call "%%~dp0lib_console.cmd"
+call "%~dp0lib_console.cmd"
 set lib_git=call "%~dp0lib_git.cmd"
 
 

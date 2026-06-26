@@ -2,7 +2,7 @@
 
 
 call "%~dp0lib_base.cmd"
-call "%%~dp0lib_console"
+call "%~dp0lib_console"
 set lib_path=call "%~dp0lib_path.cmd"
 
 if "%~1" == "/h" (

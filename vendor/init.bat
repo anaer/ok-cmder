@@ -103,11 +103,11 @@ if "%PROCESSOR_ARCHITECTURE%"=="x86" (
 )
 
 :: Tell the user about the clink config files...
-if defined "%CMDER_USER_CONFIG%\settings" if not exist "%CMDER_USER_CONFIG%\settings" (
+if defined CMDER_USER_CONFIG if not exist "%CMDER_USER_CONFIG%\settings" (
     echo Generating clink initial settings in "%CMDER_USER_CONFIG%\settings"
-    echo Additional *.lua files in "%CMDER_USER_CONFIG%" are loaded on startup.\
+    echo Additional *.lua files in "%CMDER_USER_CONFIG%" are loaded on startup.
 
-} else if not exist "%CMDER_ROOT%\config\settings" (
+) else if not exist "%CMDER_ROOT%\config\settings" (
     echo Generating clink initial settings in "%CMDER_ROOT%\config\settings"
     echo Additional *.lua files in "%CMDER_ROOT%\config" are loaded on startup.
 )
