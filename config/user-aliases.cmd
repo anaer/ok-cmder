@@ -22,6 +22,9 @@ pwsh=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolic
 ;= 展示当前目录下最大的10个目录 按大小降序
 dsizes=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -Command "Invoke-Expression '. ''%CMDER_ROOT%/bin/custom/dir-sizes.ps1'''"
 
+;= 清理当前目录下的所有空目录
+emptydir=powershell -Command "Get-ChildItem -Directory -Recurse | Where-Object { (Get-ChildItem $_.FullName -Force).Count -eq 0 } | Sort-Object FullName -Descending | Remove-Item -Force"
+
 ;= Git 命令别名 =================================================
 ;= Git 默认使用 less 作为分页器，可能卡住报错, 需要禁用分页器 添加参数--no-pager 或者修改配置 git config --global core.pager ""
 ;= 查看最近10日志修改日志, 支持传参指定文件
@@ -67,6 +70,7 @@ mvn-dep=mvnd dependency:analyze $*
 mvn-u=mvnd dependency:resolve -U $*
 ;= 下载文档源码
 mvn-dd=mvnd dependency:resolve -Dclassifier=javadoc && mvnd dependency:resolve -Dclassifier=sources
+mvn-ds=mvnd dependency:resolve -Dclassifier=sources
 ;= 检查依赖版本更新 禁用快照版本和大版本更新
 mvn-v=mvnd versions:display-dependency-updates -DallowSnapshots=false -DallowMajorUpdates=false $*
 ;= 检查依赖版本更新 禁用快照版本和大版本更新和小版本更新
