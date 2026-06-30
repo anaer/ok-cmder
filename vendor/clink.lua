@@ -176,7 +176,8 @@ end
 -- @return {false|mercurial branch name}
 ---
 local function get_hg_branch()
-    local pfile = io.popen("hg branch 2>nul")
+    local hg_cmd = clink.get_env('HG_PATH') or 'hg'
+    local pfile = io.popen(hg_cmd .. ' branch 2>nul')
     if pfile then
         for line in pfile:lines() do
             local m = line:match("(.+)$")
@@ -195,7 +196,8 @@ end
 -- @return {false|svn branch name}
 ---
 local function get_svn_branch(svn_dir)
-    local pfile = io.popen("svn info 2>nul")
+    local svn_cmd = clink.get_env('SVN_PATH') or 'svn'
+    local pfile = io.popen(svn_cmd .. ' info 2>nul')
     if pfile then
         for line in pfile:lines() do
             local m = line:match("^Relative URL:")
@@ -214,7 +216,8 @@ end
 -- @return {bool}
 ---
 local function get_git_status()
-    local file = io.popen("git --no-optional-locks status --porcelain 2>nul")
+    local git_cmd = clink.get_env('GIT_PATH') or 'git'
+    local file = io.popen(git_cmd .. ' --no-optional-locks status --porcelain 2>nul')
     if not file then return true end
     for line in file:lines() do
         file:close()
@@ -229,7 +232,8 @@ end
 -- @return {bool}
 ---
 local function get_hg_status()
-    local file = io.popen("hg status -0 2>nul")
+    local hg_cmd = clink.get_env('HG_PATH') or 'hg'
+    local file = io.popen(hg_cmd .. ' status -0 2>nul')
     if not file then return true end
     for line in file:lines() do
         file:close()
@@ -244,7 +248,8 @@ end
 -- @return {bool}
 ---
 local function get_svn_status()
-    local file = io.popen("svn status -q 2>nul")
+    local svn_cmd = clink.get_env('SVN_PATH') or 'svn'
+    local file = io.popen(svn_cmd .. ' status -q 2>nul')
     if not file then return true end
     for line in file:lines() do
         file:close()

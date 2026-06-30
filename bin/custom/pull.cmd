@@ -7,12 +7,16 @@ if %errorlevel% equ 0 (
     for /l %%a in (1,1,100) do (
         echo %%a-----------------------
         git pull --no-rebase
-        if not errorlevel 1 goto :EOF
+        if not errorlevel 1 (
+            echo Pull success
+            goto :end
+        )
         timeout /t 3 /nobreak >nul
     )
 ) else (
     echo 当前目录不是git仓库
-    goto :EOF
+    goto :end
 )
 
+:end
 echo -------------------------end

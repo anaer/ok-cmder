@@ -127,8 +127,10 @@ if (-not (test-path "$ENV:CMDER_ROOT\config\profile.d")) {
 
 pushd $ENV:CMDER_ROOT\config\profile.d
 foreach ($x in Get-ChildItem *.ps1) {
-  # write-host write-host Sourcing $x
-  . $x
+  # Skip files starting with _ (convention for non-auto-execution)
+  if ($x.Name -notmatch '^_') {
+    . $x.FullName
+  }
 }
 popd
 
@@ -137,8 +139,10 @@ popd
 if ($ENV:CMDER_USER_CONFIG -ne "" -and (test-path "$ENV:CMDER_USER_CONFIG\profile.d")) {
     pushd $ENV:CMDER_USER_CONFIG\profile.d
     foreach ($x in Get-ChildItem *.ps1) {
-      # write-host write-host Sourcing $x
-      . $x
+      # Skip files starting with _ (convention for non-auto-execution)
+      if ($x.Name -notmatch '^_') {
+        . $x.FullName
+      }
     }
     popd
 }

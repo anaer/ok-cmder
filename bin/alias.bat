@@ -84,6 +84,14 @@ if not ["%_temp%"] == ["%alias_name%"] (
 	exit /b
 )
 
+:: validate alias name (only allow alphanumeric, underscore, and hyphen)
+echo %alias_name%| findstr /r "^[a-zA-Z0-9_-]*$" >nul
+if errorlevel 1 (
+	echo Error: Invalid alias name. Only alphanumeric, underscore, and hyphen allowed.
+	endlocal
+	exit /b 1
+)
+
 :: replace already defined alias
 findstr /b /v /i "%alias_name%=" "%ALIASES%" >> "%ALIASES%.tmp"
 echo %alias_name%=%alias_value% >> "%ALIASES%.tmp" && type "%ALIASES%.tmp" > "%ALIASES%" & @del /f /q "%ALIASES%.tmp"

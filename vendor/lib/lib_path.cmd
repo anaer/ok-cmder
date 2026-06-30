@@ -40,7 +40,12 @@ exit /b
 
     setlocal enabledelayedexpansion
     if "%~1" neq "" (
-        set "add_path=%~1"
+        if exist "%~1" (
+            set "add_path=%~1"
+        ) else (
+            %lib_console% show_error "Path does not exist: %~1"
+            exit /b 1
+        )
     ) else (
         %lib_console% show_error "You must specify a directory to add to the path!"
         exit /b 1
@@ -114,7 +119,12 @@ exit /b
 
     setlocal enabledelayedexpansion
     if "%~1" neq "" (
-        set "add_path=%~1"
+        if exist "%~1" (
+            set "add_path=%~1"
+        ) else (
+            %lib_console% show_error "Path does not exist: %~1"
+            exit /b 1
+        )
     ) else (
         %lib_console% show_error "You must specify a directory to add to the path!"
         exit /b 1
