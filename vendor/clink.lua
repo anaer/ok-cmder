@@ -352,5 +352,8 @@ for _,lua_module in ipairs(clink.find_files(completions_dir..'*.lua')) do
     end
 end
 
+-- 加载 more-clink-completions (docker, maven, java, curl, dart, openssl 等)
+pcall(dofile, clink.get_env('CMDER_ROOT')..'/vendor/more-clink-completions/more-clink-completions.lua')
+
 -- 启用starship
 -- load(io.popen('starship init cmd'):read("*a"))()
