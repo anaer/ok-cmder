@@ -72,7 +72,7 @@ function Import-Git($Loaded){
 
 function checkGit($Path) {
     if (Test-Path -Path (Join-Path $Path '.git') ) {
-        $gitLoaded = Import-Git $gitLoaded
+        $script:gitLoaded = Import-Git $script:gitLoaded
         Write-VcsStatus
         return
     }

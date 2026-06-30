@@ -7,10 +7,10 @@ set cmder_root=%cmder_path:~0,-1%
 set str_cmp=ok-cmder
 set end_flag=-xxxend
 
-reg query HKCU\Environment\ /v path > a.txt
+reg query HKCU\Environment\ /v path > "%TEMP%\cmder_install_path.txt"
 
 setlocal enabledelayedexpansion
-for /f "tokens=1-3 delims= " %%i in (a.txt) do (
+for /f "usebackq tokens=1-3 delims= " %%i in ("%TEMP%\cmder_install_path.txt") do (
 	set name=%%i
 	set type=%%j
 	set value=%%k
@@ -27,7 +27,7 @@ set value=%value%;%cmder_root%
 reg add "HKCU\Environment" /f /t %type% /v %name% /d "%value%"
 
 :exist_cmder_path
-del a.txt
+del "%TEMP%\cmder_install_path.txt" 2>nul
 
 :: *****************************
 :: Configure local git config
@@ -70,7 +70,7 @@ set INSTALL_DIR=%~dp0src-install
 :: %INSTALL_DIR%\setup-x86_64.exe -q -n -s https://mirrors.tuna.tsinghua.edu.cn/cygwin/ -R D:\ok-cmder\vendor\git-for-windows\cygwin
 
 :: Install gcc compiler
-%INSTALL_DIR%\setup-x86_64.exe -q -n -W -s http://mirrors.aliyun.com/cygwin/ --root %~dp0vendor\cygwin -l %INSTALL_DIR%\tmp ^
+%INSTALL_DIR%\setup-x86_64.exe -q -n -W -s https://mirrors.aliyun.com/cygwin/ --root %~dp0vendor\cygwin -l %INSTALL_DIR%\tmp ^
 -P gcc-core -P gcc-g++ -P make -p gdb -P binutils ^
 -P cmake ^
 -P vim -P git ^

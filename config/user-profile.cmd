@@ -37,7 +37,7 @@ set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\zoxide;%PATH%"
 
 :: 添加自定义环境变量
-set "PATH=.;C:\Users\Administrator\.local\bin;D:\Putty;D:\Lua\5.1;D:\GreenWare;C:\Users\Administrator\AppData\Roaming\npm;C:\Windows\System32;%PATH%"
+set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%SystemRoot%\System32;%PATH%"
 
 :: 设置starship配置文件路径
 @REM set "STARSHIP_CONFIG=%CMDER_ROOT%\config\starship.toml"

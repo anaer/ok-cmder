@@ -35,6 +35,7 @@ local function __zoxide_query(options, keywords)
   keywords = table.concat(keywords, ' ')
 
   local file = io.popen('zoxide query ' .. options .. ' -- ' .. keywords)
+  if not file then return 'call' end
   local result = file:read '*line'
   local ok = file:close()
 
@@ -61,7 +62,7 @@ if not clink.onbeginedit then
 end
 
 local __zoxide_oldpwd
-function __zoxide_hook()
+local function __zoxide_hook()
   local zoxide_hook = settings.get 'zoxide.hook'
 
   if zoxide_hook == 'none' then
@@ -97,7 +98,7 @@ end
 --
 
 -- remove double quotes
-function unquote(s)
+local function unquote(s)
   local unquoted = string.match(s, '^"(.*)"$')
   if unquoted then
     return unquoted
@@ -138,14 +139,14 @@ end
 --
 
 local function onfilterinput(text)
-  args = string.explode(text, ' ', '"')
+  local args = string.explode(text, ' ', '"')
   if #args == 0 then
     return
   end
 
   -- settings
-  zoxide_cmd = settings.get 'zoxide.cmd'
-  zoxide_no_aliases = settings.get 'zoxide.no_aliases'
+  local zoxide_cmd = settings.get 'zoxide.cmd'
+  local zoxide_no_aliases = settings.get 'zoxide.no_aliases'
 
   -- edge case:
   -- * zoxide command prefix is 'cd'

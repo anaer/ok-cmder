@@ -1,7 +1,8 @@
 @echo off
-chcp 65001
-echo %*
-for /l %%a in (1,1,100) do (echo %%a------------------- && %* && goto :EOF; sleep 3)
-
-:EOF
-echo -------------------end
+chcp 65001 >nul
+powershell -ExecutionPolicy RemoteSigned -File "%~dpn0.ps1" %*
+if %errorlevel% equ 0 (
+    echo -------------------end
+) else (
+    echo Command failed after 100 attempts
+)

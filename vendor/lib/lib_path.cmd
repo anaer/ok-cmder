@@ -43,7 +43,7 @@ exit /b
         set "add_path=%~1"
     ) else (
         %lib_console% show_error "You must specify a directory to add to the path!"
-        exit 1
+        exit /b 1
     )
 
     if "%~2" neq "" if /i "%~2" == "append" (
@@ -117,7 +117,7 @@ exit /b
         set "add_path=%~1"
     ) else (
         %lib_console% show_error "You must specify a directory to add to the path!"
-        exit 1
+        exit /b 1
     )
 
     if "%~2" gtr "1" (

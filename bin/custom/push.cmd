@@ -4,10 +4,15 @@ rem 因github容易连不上, 所以间隔几秒循环执行, 一般10次以内�
 echo git push
 git rev-parse --is-inside-work-tree >nul 2>nul
 if %errorlevel% equ 0 (
-    for /l %%a in (1,1,100) do (echo %%a------------------- && git push && goto :EOF; sleep 3)
+    for /l %%a in (1,1,100) do (
+        echo %%a-------------------
+        git push
+        if not errorlevel 1 goto :EOF
+        timeout /t 3 /nobreak >nul
+    )
 ) else (
     echo 当前目录不是git仓库
+    goto :EOF
 )
 
-:EOF
 echo -------------------end

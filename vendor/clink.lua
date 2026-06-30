@@ -176,13 +176,17 @@ end
 -- @return {false|mercurial branch name}
 ---
 local function get_hg_branch()
-    for line in io.popen("hg branch 2>nul"):lines() do
-        local m = line:match("(.+)$")
-        if m then
-            return m
+    local pfile = io.popen("hg branch 2>nul")
+    if pfile then
+        for line in pfile:lines() do
+            local m = line:match("(.+)$")
+            if m then
+                pfile:close()
+                return m
+            end
         end
+        pfile:close()
     end
-
     return false
 end
 
@@ -191,13 +195,17 @@ end
 -- @return {false|svn branch name}
 ---
 local function get_svn_branch(svn_dir)
-    for line in io.popen("svn info 2>nul"):lines() do
-        local m = line:match("^Relative URL:")
-        if m then
-            return line:sub(line:find("/")+1,line:len())
+    local pfile = io.popen("svn info 2>nul")
+    if pfile then
+        for line in pfile:lines() do
+            local m = line:match("^Relative URL:")
+            if m then
+                pfile:close()
+                return line:sub(line:find("/")+1,line:len())
+            end
         end
+        pfile:close()
     end
-
     return false
 end
 
@@ -207,12 +215,12 @@ end
 ---
 local function get_git_status()
     local file = io.popen("git --no-optional-locks status --porcelain 2>nul")
+    if not file then return true end
     for line in file:lines() do
         file:close()
         return false
     end
     file:close()
-
     return true
 end
 
@@ -221,13 +229,13 @@ end
 -- @return {bool}
 ---
 local function get_hg_status()
-    local file = io.popen("hg status -0")
+    local file = io.popen("hg status -0 2>nul")
+    if not file then return true end
     for line in file:lines() do
         file:close()
         return false
     end
     file:close()
-
     return true
 end
 
@@ -235,14 +243,14 @@ end
 -- Get the status of working dir
 -- @return {bool}
 ---
-function get_svn_status()
-    local file = io.popen("svn status -q")
+local function get_svn_status()
+    local file = io.popen("svn status -q 2>nul")
+    if not file then return true end
     for line in file:lines() do
         file:close()
         return false
     end
     file:close()
-
     return true
 end
 

@@ -17,10 +17,10 @@ awk=gawk $*
 rg=ag
 
 ;= Powershell别名 =================================================
-pwsh=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -Command "Invoke-Expression '. ''%CMDER_ROOT%/vendor/profile.ps1'''"
+pwsh=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy RemoteSigned -NoLogo -NoProfile -NoExit -Command ". '%CMDER_ROOT%/vendor/profile.ps1'"
 
 ;= 展示当前目录下最大的10个目录 按大小降序
-dsizes=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy Bypass -NoLogo -NoProfile -NoExit -Command "Invoke-Expression '. ''%CMDER_ROOT%/bin/custom/dir-sizes.ps1'''"
+dsizes=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy RemoteSigned -NoLogo -NoProfile -NoExit -Command ". '%CMDER_ROOT%/bin/custom/dir-sizes.ps1'"
 
 ;= 清理当前目录下的所有空目录
 emptydir=powershell -Command "Get-ChildItem -Directory -Recurse | Where-Object { (Get-ChildItem $_.FullName -Force).Count -eq 0 } | Sort-Object FullName -Descending | Remove-Item -Force"
@@ -52,9 +52,9 @@ open=explorer.exe $*
 start=explorer.exe $*
 
 ;= 编辑器 =================================================
-vi="D:\Microsoft VS Code Insiders\Code - Insiders.exe" $*
-vim="D:\Microsoft VS Code Insiders\Code - Insiders.exe" $*
-code="D:\Microsoft VS Code Insiders\Code - Insiders.exe" $*
+vi="%CMDER_ROOT%\vendor\cygwin\bin\vim.exe" $*
+vim="%CMDER_ROOT%\vendor\cygwin\bin\vim.exe" $*
+code="%CMDER_ROOT%\vendor\cygwin\bin\vim.exe" $*
 
 ;= mvn 命令别名 =================================================
 mvn-h=alias|grep mvn
