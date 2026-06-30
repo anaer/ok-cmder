@@ -45,11 +45,7 @@ try {
 } catch {
     # # You could do this but it may be a little drastic and introduce a lot of
     # # unix tool overlap with powershel unix like aliases
-    # $env:Path += $(";" + $env:CMDER_ROOT + "\vendor\git-for-windows\usr\bin")
-    # set-alias -name "vi" -value "vim"
-    # # I think the below is safer.
-
-    new-alias -name "vim" -value $($ENV:CMDER_ROOT + "\vendor\git-for-windows\usr\bin\vim.exe")
+    new-alias -name "vim" -value $($ENV:CMDER_ROOT + "\vendor\cygwin\bin\vim.exe")
     new-alias -name "vi" -value vim
 }
 
@@ -57,9 +53,7 @@ try {
     # Check if git is on PATH, i.e. Git already installed on system
     Get-command -Name "git" -ErrorAction Stop >$null
 } catch {
-    $env:Path += $(";" + $env:CMDER_ROOT + "\vendor\git-for-windows\cmd")
-    # for bash.exe, which in the cmd version is found as <GIT>\usr\bin\bash.exe
-    $env:Path += $(";" + $env:CMDER_ROOT + "\vendor\git-for-windows\bin")
+    $env:Path += $(";" + $env:CMDER_ROOT + "\vendor\cygwin\bin")
 }
 
 $gitLoaded = $false
