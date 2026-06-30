@@ -50,6 +50,44 @@
 16. 修复：timeout 命令被 Cygwin 拦截
     - `bin/custom/push.cmd` 和 `bin/custom/pull.cmd` 使用完整路径 `%SystemRoot%\System32\timeout.exe`
 
+17. 新增：快捷导航别名
+    - `..`, `...`, `....` 快速返回上级目录
+    - `~` 回到主目录, `!` 回到 cmder 根目录, `@` 回到工作区
+
+18. 新增：网络工具别名
+    - `myip` 显示公网IP, `lanip` 显示局域网IP
+    - `ports` 显示监听端口, `ping8` 测试Google DNS
+    - `dns` DNS查询, `trace` 路由追踪, `wget` 下载文件
+
+19. 新增：文件操作别名
+    - `mkfile` 创建空文件, `cat` 显示文件内容
+    - `cp` 复制, `mv` 移动, `rm` 删除文件, `rf` 删除目录
+    - `lsf` 列出文件, `lsd` 列出目录
+
+20. 新增：系统监控别名
+    - `ps` 查找进程, `kill` 结束进程
+    - `mem` 内存信息, `disk` 磁盘空间, `uptime` 启动时间
+    - `env` 环境变量, `path` 显示PATH
+
+21. 新增：Git 增强别名
+    - `gst` 状态, `gco` 切换分支, `gbr` 分支列表
+    - `gcmt` 提交, `gadd` 添加, `gdf` 差异
+    - `gsh` 暂存, `gshp` 恢复暂存, `gpl` 拉取, `gps` 推送
+    - `glg` 图形化日志, `gclean` 清理未跟踪文件
+
+22. 新增：压缩解压别名
+    - `tarx` 解压tar, `tarc` 压缩tar.gz
+    - `7z` 7-Zip压缩, `unzip` 解压zip
+
+23. 新增：文本处理别名
+    - `json` JSON格式化, `wc` 统计行数, `sort` 排序
+    - `uniq` 去重, `diff` 文件比较, `grep` 文本搜索
+    - `sed` 流编辑器, `tee` 输出到文件和屏幕
+
+24. 新增：开发工具别名
+    - `tree` 显示目录树, `json_pp` JSON美化
+    - `base64` Base64编解码, `md5` MD5校验, `sha256` SHA256校验
+
 ## 25.1125.1032
 
 1. 添加dl.cmd github加速下载脚本

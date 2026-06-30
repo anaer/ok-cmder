@@ -16,6 +16,130 @@ clear=cls
 awk=gawk $*
 rg=ag
 
+;= 快捷导航 =================================================
+..=cd /d ..
+...=cd /d ..\..
+....=cd /d ..\..\..
+~=cd /d "%HOME%"
+!=cd /d "%CMDER_ROOT%"
+@=cd /d "%WORKSPACE%"
+
+;= 网络工具 =================================================
+;= 显示公网IP
+myip=curl -s ifconfig.me
+;= 显示局域网IP
+lanip=ipconfig | findstr /i "IPv4"
+;= 显示监听端口
+ports=netstat -ano | findstr "LISTENING"
+;= 快速测试Google DNS
+ping8=ping -n 4 8.8.8.8
+;= DNS查询
+dns=nslookup $*
+;= 路由追踪
+trace=tracert $*
+;= 下载文件
+wget=curl -L -O $*
+
+;= 文件操作 =================================================
+;= 创建空文件
+mkfile=type nul > $*
+;= 显示文件内容
+cat=type $*
+;= 复制文件
+cp=copy $*
+;= 移动文件
+mv=move $*
+;= 删除文件
+rm=del $*
+;= 删除目录
+rf=rd /s /q $*
+;= 列出文件(不含目录)
+lsf=dir /b /a-d $*
+;= 列出目录
+lsd=dir /b /ad $*
+
+;= 系统监控 =================================================
+;= 查找进程
+ps=tasklist | findstr $*
+;= 结束进程
+kill=taskkill /f /im $*
+;= 内存信息
+mem=systeminfo | findstr /i "memory"
+;= 磁盘空间
+disk=wmic logicaldisk get size,freespace,caption
+;= 系统启动时间
+uptime=systeminfo | findstr /i "boot time"
+;= 显示环境变量
+env=set $*
+;= 显示PATH
+path=echo %PATH%
+
+;= Git 增强别名 =================================================
+;= Git状态
+gst=git status $*
+;= Git切换分支
+gco=git checkout $*
+;= Git分支列表
+gbr=git branch $*
+;= Git提交
+gcmt=git commit -m $*
+;= Git添加
+gadd=git add $*
+;= Git差异
+gdf=git diff $*
+;= Git暂存
+gsh=git stash $*
+;= Git恢复暂存
+gshp=git stash pop $*
+;= Git拉取
+gpl=git pull $*
+;= Git推送
+gps=git push $*
+;= 图形化日志
+glg=git log --oneline --graph --decorate -20
+;= 清理未跟踪文件
+gclean=git clean -fd $*
+
+;= 压缩解压 =================================================
+;= 解压tar
+tarx=tar -xf $*
+;= 压缩tar.gz
+tarc=tar -czf $*
+;= 7-Zip压缩
+7z=bin\systools\7z.exe $*
+;= 解压zip
+unzip=busybox unzip $*
+
+;= 文本处理 =================================================
+;= JSON格式化
+json=python -m json.tool $*
+;= 统计行数单词
+wc=busybox wc $*
+;= 排序
+sort=busybox sort $*
+;= 去重
+uniq=busybox uniq $*
+;= 文件比较
+diff=busybox diff $*
+;= 文本搜索
+grep=busybox grep $*
+;= 流编辑器
+sed=busybox sed $*
+;= 输出到文件和屏幕
+tee=busybox tee $*
+
+;= 开发工具 =================================================
+;= 显示目录树
+tree=tree /f $*
+;= JSON美化
+json_pp=python -m json.tool
+;= Base64编解码
+base64=busybox base64 $*
+;= MD5校验
+md5=busybox md5sum $*
+;= SHA256校验
+sha256=busybox sha256sum $*
+
 ;= Powershell别名 =================================================
 pwsh=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy RemoteSigned -NoLogo -NoProfile -NoExit -Command ". '%CMDER_ROOT%/vendor/profile.ps1'"
 
