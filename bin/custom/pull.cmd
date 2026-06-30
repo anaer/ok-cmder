@@ -11,7 +11,7 @@ if %errorlevel% equ 0 (
             echo Pull success
             goto :end
         )
-        timeout /t 3 /nobreak >nul
+        %SystemRoot%\System32\timeout.exe /t 3 /nobreak >nul
     )
 ) else (
     echo 当前目录不是git仓库

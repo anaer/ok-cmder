@@ -47,6 +47,9 @@
 15. 改进：临时文件处理
     - `Install.bat` 临时文件写入 %TEMP% 目录
 
+16. 修复：timeout 命令被 Cygwin 拦截
+    - `bin/custom/push.cmd` 和 `bin/custom/pull.cmd` 使用完整路径 `%SystemRoot%\System32\timeout.exe`
+
 ## 25.1125.1032
 
 1. 添加dl.cmd github加速下载脚本
