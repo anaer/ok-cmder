@@ -9,6 +9,9 @@ if %errorlevel% neq 0 (
     goto :end
 )
 
+rem ignore file mode changes
+git config core.fileMode false
+
 rem check if there are local changes
 git diff --quiet
 set has_unstaged=%errorlevel%
