@@ -22,6 +22,10 @@ if %has_unstaged% equ 0 if %has_staged% equ 0 (
     goto :end
 )
 
+echo.
+echo Changed files:
+git status --short
+
 rem pull remote changes first
 echo.
 echo [1/3] Pulling remote changes...
@@ -50,7 +54,7 @@ if %errorlevel% neq 0 (
 rem commit changes
 echo.
 echo [3/3] Committing...
-set "commit_msg=%~1"
+set "commit_msg=%*"
 if "%commit_msg%"=="" (
     git commit -m "update"
 ) else (
