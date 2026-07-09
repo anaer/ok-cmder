@@ -42,13 +42,19 @@ echo Pull failed after 100 retries
 goto :end
 
 :pull_done
-rem stage all changes
+rem check if already staged, otherwise stage all changes
 echo.
-echo [2/3] Staging changes...
-git add .
+echo [2/3] Checking staged changes...
+git diff --cached --quiet
 if %errorlevel% neq 0 (
-    echo Staging failed
-    goto :end
+    echo Already have staged changes
+) else (
+    echo No staged changes, staging all...
+    git add .
+    if %errorlevel% neq 0 (
+        echo Staging failed
+        goto :end
+    )
 )
 
 rem commit changes
