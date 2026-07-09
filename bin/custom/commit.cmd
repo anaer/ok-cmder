@@ -13,11 +13,10 @@ rem ignore file mode changes
 git config core.fileMode false
 
 rem check if there are local changes
-git diff --quiet
-set has_unstaged=%errorlevel%
-git diff --cached --quiet
-set has_staged=%errorlevel%
-if %has_unstaged% equ 0 if %has_staged% equ 0 (
+set "has_changes=0"
+git diff --quiet || set "has_changes=1"
+git diff --cached --quiet || set "has_changes=1"
+if "%has_changes%"=="0" (
     echo No local changes to commit
     goto :end
 )
@@ -28,7 +27,7 @@ git status --short
 
 rem pull remote changes first
 echo.
-echo [1/3] Pulling remote changes...
+echo [1/4] Pulling remote changes...
 for /l %%a in (1,1,100) do (
     git pull --no-rebase
     if not errorlevel 1 (
@@ -44,7 +43,7 @@ goto :end
 :pull_done
 rem check if already staged, otherwise stage all changes
 echo.
-echo [2/3] Checking staged changes...
+echo [2/4] Checking staged changes...
 git diff --cached --quiet
 if %errorlevel% neq 0 (
     echo Already have staged changes
@@ -59,7 +58,7 @@ if %errorlevel% neq 0 (
 
 rem commit changes
 echo.
-echo [3/3] Committing...
+echo [3/4] Committing...
 set "commit_msg=%*"
 if "%commit_msg%"=="" (
     git commit -m "update"
@@ -73,6 +72,29 @@ if %errorlevel% neq 0 (
 
 echo.
 echo Commit success
+
+rem push only if no local changes remain
+set "has_changes=0"
+git diff --quiet || set "has_changes=1"
+git diff --cached --quiet || set "has_changes=1"
+if "%has_changes%"=="1" goto :skip_push
+
+rem push changes
+echo.
+echo [4/4] Pushing...
+git push
+if %errorlevel% neq 0 (
+    echo Push failed
+    goto :end
+)
+
+echo.
+echo Push success
+goto :end
+
+:skip_push
+echo.
+echo Local changes remain, skipping push
 
 :end
 echo -------------------------end
