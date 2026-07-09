@@ -39,6 +39,9 @@ set "PATH=%CMDER_ROOT%\vendor\zoxide;%PATH%"
 :: 添加自定义环境变量
 set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%SystemRoot%\System32;%PATH%"
 
+:: 系统环境变量设置 是为了wireshark抓包, 这里置空以防影响cmd中的curl请求
+set "SSLKEYLOGFILE="
+
 :: 设置starship配置文件路径
 @REM set "STARSHIP_CONFIG=%CMDER_ROOT%\config\starship.toml"
 :: 设置starship日志级别, 用于隐藏timeout的警告日志
