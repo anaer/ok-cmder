@@ -2,6 +2,32 @@
 
 ### Releases from [chrisant996/clink](https://github.com/chrisant996/clink) fork
 
+#### v1.9.28
+
+- Fixed a case where `clink-select-complete` could accidentally wrap long matches with descriptions instead of truncating them.
+- Fixed a case where `clink-select-complete` could get confused about how many matches it meant to print per line when showing descriptions inline (especially when using a wide terminal window).
+
+#### v1.9.27
+
+- Added new `suggestionlist.max_width` setting to override the default width of the suggestion list.
+- Changed [clink.onhistory()](#clink.onhistory) to let the handler function return a string to override what is saved to history.
+- Fixed scrolling jitter while trying to scroll the legacy conhost terminal while Lua scripts are trying to refresh the prompt in the background (e.g. async prompt filtering or animated prompts); refreshing the prompt is paused while the legacy conhost terminal is scrolled, and resumes after the prompt and input line are fully visible again.
+- Fixed [#879](https://github.com/chrisant996/clink/issues/879); `prompt filter failed` in a directory with empty `.git` subdirectory.
+
+#### v1.9.26
+
+- Added new bindable commands `clink-show-suggestion-list` and `clink-cancel-suggestion-list`, for more specific control than `clink-toggle-suggestion-list`.
+- Added the console codepage to `clink info` and `clink-diagnostics` output.
+- Changed how coloring the command word works with remote paths/files:
+  - Disable coloring the command word with absolute remote paths/files, instead of coloring it as "unrecognized".
+  - Allow coloring the command word with relative remote paths/files, i.e. when the current directory is a remote drive, instead of coloring it as "unrecognized" (this can be disabled by setting the `CLINK_NO_REMOTE_COLORING` environment variable to a positive integer such as `1`).
+- Updated documentation to be clear that the `autosuggest.strategy` setting is a list of strategy names separated by spaces (other punctuation are not separators).
+- Fixed the "User scripts and history" checkbox in the uninstaller so it correctly deletes them when checked (regression introduced in v0.2, in 2012).
+- Fixed the `clink.debugprint()` Lua API to handle UTF8 appropriately.
+- Fixed off-by-one row when clicking the mouse in the suggestion list when the `suggestionlist.hide_hints` setting is false.
+- Fixed [#875](https://github.com/chrisant996/clink/issues/875); crash on HTTP error partway through checking for an update.
+- Internal changes to remove internal Clink Lua functions and data from the visible namespace.
+
 #### v1.9.25
 
 - Added new `suggestionlist.autooff` setting to optionally automatically disable the suggestion list after each use (ended by <kbd>Esc</kbd> or <kbd>Enter</kbd>).
