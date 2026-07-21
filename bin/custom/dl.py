@@ -35,12 +35,7 @@ def generate_cdn_url(github_url):
     # 构建 GitHub CDN 下载链接
     # curl https://git.mxg.pub/api/github/list | jq ".data[].url"
     cdn_domains = [
-        "cors.isteed.cc/github.com",
-        "edgeone.gh-proxy.org/https://github.com",
-        "fastgit.cc/https://github.com",
-        "gh-proxy.org/https://github.com",
         "gh.chjina.com/https://github.com",
-        "gh.catmak.name/https://github.com",
         "gh.ddlc.top/https://github.com",
         "gh.jasonzeng.dev/https://github.com",
         "gh.monlor.com/https://github.com",
@@ -60,6 +55,11 @@ def generate_cdn_url(github_url):
         "proxy.v2gh.com/https://github.com",
         "mirror.v2gh.com/https://github.com",
         # 以下源 请求有报错
+        "gh.catmak.name/https://github.com",
+        "cors.isteed.cc/github.com",
+        "edgeone.gh-proxy.org/https://github.com",
+        "fastgit.cc/https://github.com",
+        "gh-proxy.org/https://github.com",
         "gitproxy.click/https://github.com",
         "gh-proxy.net/https://github.com",
         "g.blfrp.cn/https://github.com",
