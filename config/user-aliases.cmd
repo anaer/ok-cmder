@@ -105,8 +105,6 @@ gclean=git clean -fd $*
 tarx=tar -xf $*
 ;= 压缩tar.gz
 tarc=tar -czf $*
-;= 7-Zip压缩
-7z=bin\systools\7z.exe $*
 ;= 解压zip
 unzip=busybox unzip $*
 
@@ -147,7 +145,7 @@ pwsh=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolic
 dsizes=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy RemoteSigned -NoLogo -NoProfile -NoExit -Command ". '%CMDER_ROOT%/bin/custom/dir-sizes.ps1'"
 
 ;= 清理当前目录下的所有空目录
-emptydir=powershell -Command "Get-ChildItem -Directory -Recurse | Where-Object { (Get-ChildItem $_.FullName -Force).Count -eq 0 } | Sort-Object FullName -Descending | Remove-Item -Force"
+emptydir=%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe -ExecutionPolicy RemoteSigned -NoLogo -NoProfile -Command "Get-ChildItem -Directory -Recurse | Where-Object { (Get-ChildItem $_.FullName -Force).Count -eq 0 } | Sort-Object FullName -Descending | Remove-Item -Force"
 
 ;= Git 命令别名 =================================================
 ;= Git 默认使用 less 作为分页器，可能卡住报错, 需要禁用分页器 添加参数--no-pager 或者修改配置 git config --global core.pager ""
@@ -173,7 +171,6 @@ cd=mycd.bat $*
 ;= 打开当前目录
 e.=explorer .
 open=explorer.exe $*
-start=explorer.exe $*
 
 ;= 编辑器 =================================================
 vi="%CMDER_ROOT%\vendor\cygwin\bin\vim.exe" $*

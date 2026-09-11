@@ -1,5 +1,5 @@
 - name: clink
-  version: v1.9.25
+  version: v1.9.28
   url: https://github.com/chrisant996/clink/releases/
   desc: clink update更新
 - name: fzf
@@ -28,3 +28,7 @@
   version: v1.1.0
   url: https://github.com/CJSen/lsx/releases/
   path: bin/systools/lsx.exe
+- name: more-clink-completions
+  version: v2-releases 分支(默认分支 v2 为 Haxe 源码, 无预编译 lua)
+  url: https://github.com/sebthom/more-clink-completions/tree/v2-releases
+  path: vendor/more-clink-completions/more-clink-completions.lua

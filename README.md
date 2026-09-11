@@ -110,6 +110,30 @@ flexprompt_wizard.lua
 git read-tree -mu HEAD
 ```
 
+### 别名自检
+
+新增或修改 `config\user-aliases.cmd` 后, 建议运行一次自检, 用于发现指向不存在文件的别名,
+以及覆盖 cmd 内部命令(如 start / path)的别名:
+
+```
+aliascheck.cmd
+```
+
+`cd` 属于有意重定向到 `bin\mycd.bat`, 已列入白名单不告警。如确认某个告警是有意为之,
+可将其加入脚本内的 `WHITELIST` 变量。
+
+### more-clink-completions
+
+该子模块跟踪的是 `v2-releases` 分支, 而不是默认分支:
+
+```
+git submodule add -b v2-releases --depth 1 https://github.com/sebthom/more-clink-completions.git vendor/more-clink-completions
+```
+
+原因是上游默认分支 v2 已改为 Haxe 源码(`src/**.hx`), 不包含可直接加载的
+`more-clink-completions.lua`; 只有 `v2-releases` 分支提供预编译产物,
+而 `vendor/clink.lua` 正是加载这个文件。
+
 ### 拉取子模块
 ```sh
 git submodule init

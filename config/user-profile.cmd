@@ -31,7 +31,6 @@ set "PATH=%CMDER_ROOT%\bin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\usr\x86_64-pc-cygwin\bin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\usr\sbin;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\cygwin\sbin;%PATH%"
-set "PATH=%CMDER_ROOT%\vendor\cygwin\bin;%PATH%"
 
 @REM set "PATH=%CMDER_ROOT%\vendor\z.lua;%PATH%"
 set "PATH=%CMDER_ROOT%\vendor\zoxide;%PATH%"

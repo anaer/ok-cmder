@@ -1,5 +1,59 @@
 # CHANGELOG
 
+## 26.0911.1335
+
+1. 修复: more-clink-completions 孤儿 gitlink, 重建为正式子模块
+   - 原状态: 该目录以 gitlink 存在于索引, 但 `.gitmodules` 无对应条目, 导致 `git submodule status`
+     报 `fatal: no submodule mapping found` 并以 128 退出; 其 `.git` 指针指向的模块目录
+     (`more-clink-completions1`) 实为 clink-gizmos, 配置已被污染
+   - 处理: 清除错误指针与孤儿模块目录, 重新 `git submodule add`, 并在 `.gitmodules` 中声明
+     `branch = v2-releases`
+   - 重要: 上游默认分支 v2 已改为 Haxe 源码(`src/**.hx`), **不再包含** 预编译的
+     `more-clink-completions.lua`; 只有 `v2-releases` 分支提供可直接加载的构建产物
+     (LICENSE.txt / README.md / more-clink-completions.lua)。因此必须跟踪 `v2-releases` 分支,
+     否则 `vendor/clink.lua` 的加载会失败
+
+2. 修复: 删除 `7z` 别名
+   - `config/user-aliases.cmd` 中 `7z=bin\systools\7z.exe` 指向的文件并不存在, 且使用相对路径
+
+3. 修复: 删除 `start` 别名
+   - `start=explorer.exe $*` 会覆盖 cmd 内部命令 start, 导致 `start <程序>` 失效
+
+4. 修复: `emptydir` 别名补齐 ExecutionPolicy
+   - 与 26.0630 的安全加固保持一致, 改用 RemoteSigned, 并统一指向完整 powershell 路径
+
+5. 修复: `bin/mycd.bat` 跨盘符与 `cd -` 回跳
+   - `cd` 缺少 `/d`, 跨盘符切换会静默失败
+   - OLDPATH 原在切换之后赋值, 导致 `cd -` 停留在当前目录, 现改为切换前记录旧目录, 实现真正回跳
+   - 增加引号归一化, 避免 `cd "Program Files"` 叠成双引号
+
+6. 修复: `config/user-profile.cmd` PATH 重复注入
+   - `vendor\cygwin\bin` 被注入两次, 删除其中一处; 生效优先级保持不变
+
+7. 修复: `Install.bat` PATH 注册逻辑重写
+   - 原先用固定字符串 `ok-cmder` 判断是否已注册, 目录改名后会每次重复追加, 撑爆 PATH
+   - 原 `for /f tokens=1-3` 会在首个空格处截断 PATH 值并回写, 存在损坏用户 PATH 的风险;
+     改用 `tokens=2,*` 取完整值
+   - 改为基于 `%cmder_root%` 精确判重, 幂等; 写前 `reg export` 备份到 %TEMP%
+   - 新增 PATH 长度预警(超过 1800 字符跳过写入, 避免 2048 截断)
+   - 补齐缺失的 `endlocal`; 移除不再需要的临时文件读写
+   - Cygwin 安装参数 `-p gdb` 改为 `-P gdb`(原为小写, gdb 实际未安装)
+   - clink 命令改用 `vendor\clink\clink_x64.exe` 完整路径, 不再依赖 PATH 中已有 clink
+
+8. 修正: `sources.yaml` 版本台账
+   - clink v1.9.25 -> v1.9.28(实测版本)
+   - 新增 more-clink-completions 条目, 标注其来源为 `v2-releases` 分支
+
+9. 新增: `bin/custom/aliascheck.cmd` 别名自检
+   - 检查指向不存在文件的别名(含 PATH 解析与 %CMDER_ROOT% 展开)
+   - 检查覆盖 cmd 内部命令的别名, `cd` 已列入白名单
+   - 当前结果: 87 个别名, 0 处缺失, 1 条提示(`path=echo %PATH%` 覆盖内部命令 path)
+
+10. 清理: `.gitignore` 与子模块声明冲突
+    - 移除 `vendor/clink-completions`、`vendor/clink-gizmos`(二者在 `.gitmodules` 中为活动子模块)
+    - 移除 `vendor/conemu-maximus5/ConEmu.xml`(已被跟踪且为定制配置)
+    - 移除 `vendor/z.lua`(该子模块已在 25.1013 删除)
+
 ## 26.0630.1000
 
 1. 安全修复：PowerShell ExecutionPolicy Bypass → RemoteSigned
