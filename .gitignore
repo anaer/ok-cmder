@@ -13,3 +13,4 @@ tmp/
 vendor/conemu-maximus5/ConEmu/clink
 vendor/cygwin/
 docs/
+__pycache__/

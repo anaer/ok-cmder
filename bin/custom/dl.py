@@ -1,4 +1,5 @@
 import re
+import shutil
 import sys
 import subprocess
 from urllib.parse import urlparse
@@ -118,10 +119,22 @@ def generate_cdn_url(github_url):
             urls.append(github_url.replace("github.com", domain))
     return urls
 
-# 拼接 aria2c 下载命令并执行下载
+# 查找 aria2 可执行文件，优先 aria2n，其次 aria2c
+# https://github.com/AnInsomniacy/aria2-next
+def find_aria2():
+    for name in ("aria2n", "aria2c"):
+        path = shutil.which(name)
+        if path:
+            return path
+    return None
+
+# 拼接 aria2 下载命令并执行下载
 def download_with_aria2c(cdn_urls, download_dir):
-    # 支持多个 URL 同时下载，每个 URL 单独作为参数
-    command = ["aria2c", "-d", download_dir] + cdn_urls
+    aria2 = find_aria2()
+    if not aria2:
+        print("未找到 aria2n 或 aria2c，请先安装 aria2")
+        sys.exit(1)
+    command = [aria2, "-d", download_dir] + cdn_urls
     try:
         subprocess.run(command, check=True)
     except subprocess.CalledProcessError as e:
